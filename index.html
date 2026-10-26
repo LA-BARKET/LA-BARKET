@@ -6,9 +6,11 @@
     <title>La Barket - Solutions Repas & Kiosque Connecté B2B Quimper</title>
     <style>
         :root {
-            --primary: #2B4C9B;
-            --primary-dark: #1E356D;
-            --accent: #E65100;
+            /* Palette exacte issue du logo La Barket */
+            --primary: #1845AD;         /* Bleu roi du texte LA BARKET */
+            --primary-light: #6A7EB8;   /* Bleu lavande du texte BON & RAPIDE */
+            --primary-dark: #0D235C;    /* Bleu nuit profond */
+            --accent: #E65100;         /* Orange accentué pour les boutons d'action */
             --light-bg: #F4F6FB;
             --text: #2C3E50;
         }
@@ -32,9 +34,9 @@
             position: sticky;
             top: 0;
             background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(24, 69, 173, 0.12);
             z-index: 1000;
-            padding: 10px 5%;
+            padding: 12px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -61,14 +63,14 @@
 
         nav a {
             text-decoration: none;
-            color: var(--primary-dark);
+            color: var(--primary);
             font-weight: 600;
             transition: color 0.3s;
             font-size: 0.95rem;
         }
 
         nav a:hover {
-            color: var(--accent);
+            color: var(--primary-light);
         }
 
         /* Hero Section */
@@ -90,6 +92,7 @@
             max-width: 800px;
             margin: 0 auto 30px;
             opacity: 0.95;
+            color: #E8EEFF;
         }
 
         .btn {
@@ -125,9 +128,10 @@
 
         .section-subtitle {
             text-align: center;
-            color: #666;
+            color: var(--primary-light);
             margin-bottom: 50px;
             font-size: 1.1rem;
+            font-weight: 500;
         }
 
         /* Concept & Features Grid */
@@ -144,7 +148,7 @@
             padding: 35px;
             border-radius: 12px;
             border-top: 4px solid var(--primary);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 10px rgba(24, 69, 173, 0.05);
             transition: transform 0.3s;
         }
 
@@ -161,6 +165,55 @@
         .card p {
             color: #555;
             font-size: 0.95rem;
+        }
+
+        /* Section Haute Capacité (Nouveau Bloc) */
+        .kiosque-haute-capacite {
+            background: #ffffff;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .kiosque-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .kiosque-specs {
+            background: var(--light-bg);
+            border-left: 5px solid var(--primary);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .kiosque-specs h3 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .specs-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .specs-list li {
+            position: relative;
+            padding-left: 28px;
+            color: #333;
+        }
+
+        .specs-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
         /* Section Cantine & Plats/Prix */
@@ -211,32 +264,11 @@
             white-space: nowrap;
         }
 
-        /* Detail Section (Kiosque & Région) */
-        .details-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .details-text h3 {
-            color: var(--primary);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .details-text p {
-            margin-bottom: 15px;
-            color: #444;
-        }
-
         .highlight-box {
             background: var(--light-bg);
             padding: 30px;
             border-radius: 12px;
-            border-left: 5px solid var(--accent);
+            border-left: 5px solid var(--primary-light);
         }
 
         /* Simulator Section */
@@ -250,7 +282,8 @@
             margin: 0 auto;
             padding: 40px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 25px rgba(24, 69, 173, 0.08);
+            border-top: 4px solid var(--primary);
         }
 
         .form-group {
@@ -282,10 +315,6 @@
             text-align: center;
             display: none;
             border: 1px solid #a5d6a7;
-        }
-
-        .result-box strong {
-            color: #2e7d32;
         }
 
         /* Contact Section */
@@ -323,7 +352,7 @@
         }
 
         footer p {
-            color: #cbd5e1;
+            color: var(--primary-light);
             font-size: 0.9rem;
         }
 
@@ -338,7 +367,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            .details-container, .cantine-container {
+            .kiosque-grid, .cantine-container {
                 grid-template-columns: 1fr;
             }
             .hero h1 {
@@ -357,8 +386,8 @@
         <nav>
             <ul>
                 <li><a href="#concept">Le Concept</a></li>
+                <li><a href="#kiosque">Kiosque Haute Capacité</a></li>
                 <li><a href="#cantine">La Cantine & Prix</a></li>
-                <li><a href="#kiosque">Le Kiosque</a></li>
                 <li><a href="#offres">Offre 0€</a></li>
                 <li><a href="#simulateur">Simulateur RH</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -389,6 +418,31 @@
             <div class="card">
                 <h3>🤝 Engagement QVT & RSE</h3>
                 <p>Améliorez concrètement la Qualité de Vie au Travail, renforcez la cohésion d'équipe et boostez l'attractivité de votre marque employeur.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Kiosque Haute Capacité -->
+    <section id="kiosque" class="kiosque-haute-capacite">
+        <h2 class="section-title">Un Kiosque Haute Capacité Conçu pour la Restauration Fraîche</h2>
+        <p class="section-subtitle">Une technologie moderne pour répondre aux besoins des petites comme des grandes équipes</p>
+        
+        <div class="kiosque-grid">
+            <div class="kiosque-specs">
+                <h3>Performance & Technologie Ascenseur</h3>
+                <p style="margin-bottom: 20px; color: #555;">Notre distributeur intelligent garantit la conservation optimale de la chaîne du froid et la sécurité des emballages lors de la délivrance du repas.</p>
+                <ul class="specs-list">
+                    <li><strong>Haute capacité :</strong> Capacité importante de stockage pour servir l'ensemble de vos collaborateurs sans rupture.</li>
+                    <li><strong>Système ascenseur doux :</strong> Traitement délicat de chaque plat pour préserver la présentation.</li>
+                    <li><strong>Gestion thermique intelligente :</strong> Maintien constant entre +2°C et +4°C pour une fraîcheur irréprochable.</li>
+                    <li><strong>Paiement sans contact :</strong> Titres-restaurant, CB et smartphone acceptés en 3 secondes.</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.5rem;">Intégration Faible Encombrement</h3>
+                <p style="margin-bottom: 15px;">Le kiosque prend une place minimale au sol et s'adapte à tous vos espaces (salle de pause, cafétéria, couloir principal ou hall d'entrée).</p>
+                <p><strong>Aucun aménagement lourd :</strong> Un raccordement électrique classique 230V suffit pour une mise en service immédiate.</p>
             </div>
         </div>
     </section>
@@ -433,35 +487,20 @@
         </div>
     </section>
 
-    <!-- Kiosque Detail Section -->
-    <section id="kiosque">
-        <div class="details-container">
-            <div class="details-text">
-                <h3>Le Kiosque Ascenseur Connecté</h3>
-                <p>Véritable concentré de technologie, notre kiosque s'intègre harmonieusement dans vos espaces détente, salles de pause ou halls d'accueil.</p>
-                <p>Son système exclusif d'ascenseur préserve l'intégrité de chaque plat et garantit une distribution fluide et intuitive en quelques secondes.</p>
-            </div>
-            <div class="highlight-box">
-                <h3 style="color: var(--primary); margin-bottom: 10px;">⚡ Installation ultra-simple</h3>
-                <p>Une simple prise de courant standard suffit. Aucun raccordement lourd ni travaux d'aménagement ne sont nécessaires pour profiter de la solution.</p>
-            </div>
-        </div>
-    </section>
-
     <!-- Offres Section -->
-    <section id="offres" style="background: var(--light-bg);">
+    <section id="offres">
         <h2 class="section-title">Une Offre 100% Zéro Coût pour l'Employeur</h2>
         <p class="section-subtitle">Un modèle économique transparent et sans mauvaise surprise</p>
         <div class="cards-grid">
-            <div class="card" style="background: white;">
+            <div class="card">
                 <h3>0€ d'Investissement</h3>
                 <p>L'installation, la mise en service et la logistique du kiosque sont intégralement prises en charge par nos équipes.</p>
             </div>
-            <div class="card" style="background: white;">
+            <div class="card">
                 <h3>Gestion Zéro Contrainte</h3>
                 <p>Nous assurons un réassort régulier, la maintenance préventive et le suivi qualité complet de la structure au quotidien.</p>
             </div>
-            <div class="card" style="background: white;">
+            <div class="card">
                 <h3>Autonomie Salariée</h3>
                 <p>Chaque collaborateur gère ses achats en toute autonomie directement sur le kiosque intelligent de l'entreprise.</p>
             </div>
