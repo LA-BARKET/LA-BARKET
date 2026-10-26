@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Barket - Solutions Repas & Pausse Gourmande B2B Quimper</title>
+    <title>La Barket - Solutions Repas & Kiosque Connecté B2B Quimper</title>
     <style>
         :root {
             --primary: #2B4C9B;
@@ -43,12 +43,11 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
             text-decoration: none;
         }
 
         .logo-img {
-            height: 50px;
+            height: 55px;
             width: auto;
             object-fit: contain;
         }
@@ -57,6 +56,7 @@
             display: flex;
             list-style: none;
             gap: 20px;
+            align-items: center;
         }
 
         nav a {
@@ -64,6 +64,7 @@
             color: var(--primary-dark);
             font-weight: 600;
             transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
         nav a:hover {
@@ -74,32 +75,35 @@
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            padding: 80px 5% 60px;
+            padding: 90px 5% 70px;
             text-align: center;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             max-width: 800px;
             margin: 0 auto 30px;
+            opacity: 0.95;
         }
 
         .btn {
             display: inline-block;
             background: var(--accent);
             color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
+            padding: 14px 32px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
             transition: transform 0.2s, background 0.2s;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(230, 81, 0, 0.3);
         }
 
         .btn:hover {
@@ -109,74 +113,131 @@
 
         /* Sections General */
         section {
-            padding: 60px 5%;
+            padding: 70px 5%;
         }
 
         .section-title {
             text-align: center;
             color: var(--primary);
-            margin-bottom: 40px;
-            font-size: 2rem;
+            margin-bottom: 15px;
+            font-size: 2.2rem;
         }
 
-        /* Concept Cards */
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        /* Concept & Features Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .card {
             background: var(--light-bg);
-            padding: 30px;
+            padding: 35px;
             border-radius: 12px;
             border-top: 4px solid var(--primary);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         .card h3 {
             color: var(--primary);
             margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* Detail Section (Kiosque & Région) */
+        .details-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .details-text h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .details-text p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .highlight-box {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid var(--accent);
         }
 
         /* Simulator Section */
-        .simulator-box {
+        .simulator-section {
             background: var(--light-bg);
-            max-width: 650px;
+        }
+
+        .simulator-box {
+            background: #ffffff;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
+            color: var(--primary-dark);
         }
 
         .form-group input {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
+            padding: 12px 15px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1rem;
         }
 
         .result-box {
-            margin-top: 25px;
-            padding: 20px;
+            margin-top: 30px;
+            padding: 25px;
             background: #e8f5e9;
-            border-radius: 8px;
-            color: #2e7d32;
+            border-radius: 10px;
+            color: #1b5e20;
             font-size: 1.1rem;
             text-align: center;
             display: none;
+            border: 1px solid #a5d6a7;
+        }
+
+        .result-box strong {
+            color: #2e7d32;
         }
 
         /* Contact Section */
@@ -185,42 +246,55 @@
         }
 
         .contact-form {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
         }
 
         .contact-form input, .contact-form textarea {
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
             width: 100%;
+            font-size: 1rem;
         }
 
+        /* Footer */
         footer {
             background: var(--primary-dark);
             color: white;
             text-align: center;
-            padding: 30px 5%;
-            margin-top: 40px;
+            padding: 40px 5%;
         }
 
         footer .logo-img {
-           
-            height: 40px;
-            margin-bottom: 15px;
+            height: 45px;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 gap: 15px;
+                padding: 15px;
             }
             nav ul {
-                gap: 10px;
-                font-size: 0.9rem;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .details-container {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -230,13 +304,14 @@
     <!-- Header Navigation -->
     <header>
         <a href="#" class="logo-container">
-            <img src="logo.png" alt="La Barket Logo" class="logo-img" onerror="this.style.display='none'">
+            <img src="logo.png" alt="La Barket Logo" class="logo-img">
         </a>
         <nav>
             <ul>
-                <li><a href="#concept">Notre Concept</a></li>
+                <li><a href="#concept">Le Concept</a></li>
+                <li><a href="#kiosque">Le Kiosque</a></li>
+                <li><a href="#offres">Offre 0€</a></li>
                 <li><a href="#simulateur">Simulateur RH</a></li>
-                <li><a href="#offres">Offre Zero-Coût</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -244,78 +319,101 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>La Pause Déjeuner Nouvelle Génération à Quimper</h1>
-        <p>Offrez à vos collaborateurs des repas frais, locaux et variés directement au sein de votre entreprise. Une solution clé en main, 100% zéro coût pour l'employeur.</p>
-        <a href="#contact" class="btn">Demander une démonstration gratuite</a>
+        <h1>La Pause Déjeuner B2B Nouvelle Génération à Quimper</h1>
+        <p>Proposez à vos salariés des repas frais, locaux et gourmands directement dans votre entreprise. Une solution clé en main, moderne et 100% zéro coût pour l'employeur.</p>
+        <a href="#contact" class="btn">Implanter un kiosque La Barket</a>
     </section>
 
     <!-- Concept Section -->
     <section id="concept">
-        <h2 class="section-title">Pourquoi choisir La Barket ?</h2>
+        <h2 class="section-title">Pourquoi Choisir La Barket ?</h2>
+        <p class="section-subtitle">Dynamisez la pause déjeuner au sein de vos locaux dans le Finistère (Créac'h Gwen, Gourvily...)</p>
         <div class="cards-grid">
             <div class="card">
-                <h3>🚀 Kiosque Intelligent</h3>
-                <p>Un système ascenseur innovant qui garantit des plats préservés, frais et disponibles 24/7 dans vos locaux.</p>
+                <h3>🥗 Fraîcheur & Qualité Locale</h3>
+                <p>Des recettes équilibrées et savoureuses préparées avec soin, valorisant les producteurs et circuits courts de la région bretonne.</p>
             </div>
             <div class="card">
-                <h3>🥗 Qualité & Proximité</h3>
-                <p>Des recettes concoctées avec des produits régionaux du Finistère, adaptées à tous les régimes alimentaires.</p>
+                <h3>🕒 Disponibilité 24/7</h3>
+                <p>Fini les contraintes de livraison ou les files d'attente à l'extérieur. Vos équipes se nourrissent quand elles le souhaitent, selon leur rythme.</p>
             </div>
             <div class="card">
-                <h3>💼 Engagement RH & RSE</h3>
-                <p>Améliorez la qualité de vie au travail (QVT) et l'attractivité de votre entreprise à Créac'h Gwen et Gourvily.</p>
+                <h3>🤝 Engagement QVT & RSE</h3>
+                <p>Améliorez concrètement la Qualité de Vie au Travail, renforcez la cohésion d'équipe et boostez l'attractivité de votre marque employeur.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kiosque Detail Section -->
+    <section id="kiosque" style="background: var(--light-bg);">
+        <div class="details-container">
+            <div class="details-text">
+                <h3>Le Kiosque Ascenseur Connecté</h3>
+                <p>Véritable concentré de technologie, notre kiosque s'intègre harmonieusement dans vos espaces détente, salles de pause ou halls d'accueil.</p>
+                <p>Son système exclusif d'ascenseur préserve l'intégrité de chaque plat et garantit une distribution fluide et intuitive en quelques secondes.</p>
+            </div>
+            <div class="highlight-box">
+                <h3 style="color: var(--primary); margin-bottom: 10px;">⚡ Installation ultra-simple</h3>
+                <p>Une simple prise de courant standard suffit. Aucun raccordement lourd ni travaux d'aménagement ne sont nécessaires pour profiter de la solution.</p>
             </div>
         </div>
     </section>
 
     <!-- Offres Section -->
-    <section id="offres" style="background: var(--light-bg);">
-        <h2 class="section-title">Une Installation à Zéro Coût</h2>
+    <section id="offres">
+        <h2 class="section-title">Une Offre 100% Zéro Coût pour l'Employeur</h2>
+        <p class="section-subtitle">Un modèle économique transparent et sans mauvaise surprise</p>
         <div class="cards-grid">
-            <div class="card" style="background: white;">
+            <div class="card">
                 <h3>0€ d'Investissement</h3>
-                <p>Nous prenons en charge l'installation, la gestion du stock, l'entretien et la maintenance de votre kiosque.</p>
+                <p>L'installation, la mise en service et la logistique du kiosque sont intégralement prises en charge par nos équipes.</p>
             </div>
-            <div class="card" style="background: white;">
-                <h3>Simplicité Totale</h3>
-                <p>Une prise électrique standard suffit. Vos collaborateurs paient directement leurs repas via le kiosque connecté.</p>
+            <div class="card">
+                <h3>Gestion Zéro Contrainte</h3>
+                <p>Nous assurons un réassort régulier, la maintenance préventive et le suivi qualité complet de la structure au quotidien.</p>
+            </div>
+            <div class="card">
+                <h3>Autonomie Salariée</h3>
+                <p>Chaque collaborateur gère ses achats en toute autonomie directement sur le kiosque intelligent de l'entreprise.</p>
             </div>
         </div>
     </section>
 
     <!-- Simulator Section -->
-    <section id="simulateur">
+    <section id="simulateur" class="simulator-section">
         <h2 class="section-title">Simulateur d'Impact RH & Bien-être</h2>
+        <p class="section-subtitle">Mesurez les bénéfices d'une offre de restauration qualitative pour vos équipes</p>
         <div class="simulator-box">
             <div class="form-group">
-                <label for="employees">Nombre de collaborateurs dans votre établissement :</label>
-                <input type="number" id="employees" placeholder="Ex: 50" min="10" oninput="calculateImpact()">
+                <label for="employees">Nombre de collaborateurs sur votre site :</label>
+                <input type="number" id="employees" placeholder="Ex: 50" min="5" oninput="calculateImpact()">
             </div>
             <div id="sim-result" class="result-box">
-                <p>Pour vos <strong id="res-count">0</strong> salariés :</p>
-                <p><strong>+<span id="res-hours">0</span> heures</strong> de pause optimisées par mois.</p>
-                <p><strong>100%</strong> d'amélioration du bien-être au travail !</p>
+                <p>Pour vos <strong><span id="res-count">0</span> collaborateurs</strong> :</p>
+                <p style="margin-top: 8px;"><strong>+<span id="res-hours">0</span> heures</strong> de sérénité et de temps de pause optimisé par mois.</p>
+                <p style="margin-top: 8px;">🚀 Un levier fort d'attractivité et de bien-être au bureau !</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
-        <h2 class="section-title">Contactez l'Équipe La Barket Quimper</h2>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Merci pour votre message ! L\'équipe La Barket vous recontactera rapidement.');">
-            <input type="text" placeholder="Nom de l'entreprise" required>
+        <h2 class="section-title">Discutons de Votre Projet à Quimper</h2>
+        <p class="section-subtitle">Contactez-nous pour organiser une présentation ou une dégustation</p>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Merci ! Votre message a bien été pris en compte. L\'équipe La Barket vous recontactera très rapidement.');">
+            <input type="text" placeholder="Nom de l'entreprise (ex: Zone Créac'h Gwen)" required>
             <input type="text" placeholder="Votre Nom et Prénom" required>
             <input type="email" placeholder="Adresse Email professionnelle" required>
-            <input type="tel" placeholder="Téléphone">
-            <textarea rows="4" placeholder="Votre message ou localisation (ex: Zone Créac'h Gwen)"></textarea>
+            <input type="tel" placeholder="Numéro de téléphone">
+            <textarea rows="4" placeholder="Précisez votre besoin ou le nombre de salariés..."></textarea>
             <button type="submit" class="btn">Envoyer la demande</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
-        <img src="logo.png" alt="La Barket" class="logo-img" onerror="this.style.display='none'">
-        <p>&copy; 2026 La Barket - Solutions de Restauration B2B Quimper & Finistère.</p>
+        <img src="logo.png" alt="La Barket Logo" class="logo-img">
+        <p>&copy; 2026 La Barket - Solutions de Restauration B2B Quimper & Finistère. Tous droits réservés.</p>
     </footer>
 
     <script>
