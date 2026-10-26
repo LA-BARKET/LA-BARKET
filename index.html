@@ -57,7 +57,7 @@
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 18px;
             align-items: center;
         }
 
@@ -66,7 +66,7 @@
             color: var(--primary);
             font-weight: 600;
             transition: color 0.3s;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         nav a:hover {
@@ -167,7 +167,40 @@
             font-size: 0.95rem;
         }
 
-        /* Section Haute Capacité (Nouveau Bloc) */
+        /* Section Quimper & Frigo Connecté */
+        .solution-quimper {
+            background: var(--light-bg);
+        }
+
+        .quimper-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .quimper-box {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(24, 69, 173, 0.06);
+            border-left: 5px solid var(--primary);
+        }
+
+        .quimper-box h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .quimper-box p {
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        /* Section Haute Capacité */
         .kiosque-haute-capacite {
             background: #ffffff;
             max-width: 1100px;
@@ -363,11 +396,11 @@
                 padding: 15px;
             }
             nav ul {
-                gap: 15px;
+                gap: 12px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            .kiosque-grid, .cantine-container {
+            .quimper-grid, .kiosque-grid, .cantine-container {
                 grid-template-columns: 1fr;
             }
             .hero h1 {
@@ -385,11 +418,12 @@
         </a>
         <nav>
             <ul>
-                <li><a href="#concept">Le Concept</a></li>
-                <li><a href="#kiosque">Kiosque Haute Capacité</a></li>
-                <li><a href="#cantine">La Cantine & Prix</a></li>
+                <li><a href="#concept">Concept</a></li>
+                <li><a href="#quimper">La Solution Quimper</a></li>
+                <li><a href="#kiosque">Kiosque & Frigo</a></li>
+                <li><a href="#cantine">Cantine & Prix</a></li>
                 <li><a href="#offres">Offre 0€</a></li>
-                <li><a href="#simulateur">Simulateur RH</a></li>
+                <li><a href="#simulateur">Simulateur</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -422,6 +456,25 @@
         </div>
     </section>
 
+    <!-- Section La Solution La Barket Quimper & Finistère -->
+    <section id="quimper" class="solution-quimper">
+        <h2 class="section-title">La Solution La Barket Quimper & Finistère</h2>
+        <p class="section-subtitle">Un service de proximité pensé sur-mesure pour les entreprises locales</p>
+        
+        <div class="quimper-grid">
+            <div class="quimper-box">
+                <h3>Ancrage Local & Finistérien</h3>
+                <p>Implantés au cœur de Quimper, nous intervenons rapidement sur toutes les zones d'activités (Créac'h Gwen, Gourvily, Pabu, etc.).</p>
+                <p>Nous collaborons étroitement avec des artisans et producteurs locaux pour garantir une cuisine authentique, saine et de saison.</p>
+            </div>
+            <div class="quimper-box">
+                <h3>Le Frigo Connecté Zéro Contrainte</h3>
+                <p>Alternative ou complément de notre kiosque, le <strong>frigo connecté</strong> s’intègre partout avec une simplicité absolue.</p>
+                <p>Ouverture sécurisée par badge ou application, choix du plat en un geste, débit automatique : un mode de distribution ultra-fluide pour le bien-être de vos salariés.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Section Kiosque Haute Capacité -->
     <section id="kiosque" class="kiosque-haute-capacite">
         <h2 class="section-title">Un Kiosque Haute Capacité Conçu pour la Restauration Fraîche</h2>
@@ -432,9 +485,9 @@
                 <h3>Performance & Technologie Ascenseur</h3>
                 <p style="margin-bottom: 20px; color: #555;">Notre distributeur intelligent garantit la conservation optimale de la chaîne du froid et la sécurité des emballages lors de la délivrance du repas.</p>
                 <ul class="specs-list">
-                    <li><strong>Haute capacité :</strong> Capacité importante de stockage pour servir l'ensemble de vos collaborateurs sans rupture.</li>
+                    <li><strong>Haute capacité :</strong> Stockage important pour servir tous vos collaborateurs sans rupture.</li>
                     <li><strong>Système ascenseur doux :</strong> Traitement délicat de chaque plat pour préserver la présentation.</li>
-                    <li><strong>Gestion thermique intelligente :</strong> Maintien constant entre +2°C et +4°C pour une fraîcheur irréprochable.</li>
+                    <li><strong>Gestion thermique intelligente :</strong> Maintien constant entre +2°C et +4°C.</li>
                     <li><strong>Paiement sans contact :</strong> Titres-restaurant, CB et smartphone acceptés en 3 secondes.</li>
                 </ul>
             </div>
@@ -442,7 +495,7 @@
             <div class="highlight-box">
                 <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.5rem;">Intégration Faible Encombrement</h3>
                 <p style="margin-bottom: 15px;">Le kiosque prend une place minimale au sol et s'adapte à tous vos espaces (salle de pause, cafétéria, couloir principal ou hall d'entrée).</p>
-                <p><strong>Aucun aménagement lourd :</strong> Un raccordement électrique classique 230V suffit pour une mise en service immédiate.</p>
+                <p><strong>Aucun aménagement lourd :</strong> Un simple raccordement électrique classique 230V suffit pour une mise en service immédiate.</p>
             </div>
         </div>
     </section>
