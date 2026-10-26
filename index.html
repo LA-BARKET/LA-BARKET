@@ -581,12 +581,16 @@
     <section id="contact" class="contact-section">
         <h2 class="section-title">Discutons de Votre Projet à Quimper</h2>
         <p class="section-subtitle">Contactez-nous pour organiser une présentation ou une dégustation</p>
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Merci ! Votre message a bien été pris en compte. L\'équipe La Barket vous recontactera très rapidement.');">
-            <input type="text" placeholder="Nom de l'entreprise (ex: Zone Créac'h Gwen)" required>
-            <input type="text" placeholder="Votre Nom et Prénom" required>
-            <input type="email" placeholder="Adresse Email professionnelle" required>
-            <input type="tel" placeholder="Numéro de téléphone">
-            <textarea rows="4" placeholder="Précisez votre besoin ou le nombre de salariés..."></textarea>
+        <!-- Formulaire configuré pour envoyer directement vers compta.labarket@gmail.com via FormSubmit -->
+        <form class="contact-form" action="https://formsubmit.co/compta.labarket@gmail.com" method="POST">
+            <!-- Optionnel : désactive le captcha pour fluidifier l'envoi -->
+            <input type="hidden" name="_captcha" value="false">
+            
+            <input type="text" name="entreprise" placeholder="Nom de l'entreprise (ex: Zone Créac'h Gwen)" required>
+            <input type="text" name="nom" placeholder="Votre Nom et Prénom" required>
+            <input type="email" name="email" placeholder="Adresse Email professionnelle" required>
+            <input type="tel" name="telephone" placeholder="Numéro de téléphone">
+            <textarea name="message" rows="4" placeholder="Précisez votre besoin ou le nombre de salariés..."></textarea>
             <button type="submit" class="btn">Envoyer la demande</button>
         </form>
     </section>
