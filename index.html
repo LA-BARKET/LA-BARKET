@@ -163,6 +163,54 @@
             font-size: 0.95rem;
         }
 
+        /* Section Cantine & Plats/Prix */
+        .cantine-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .cantine-menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        .menu-item-info h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .menu-item-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .price-badge {
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
         /* Detail Section (Kiosque & Région) */
         .details-container {
             max-width: 1100px;
@@ -290,7 +338,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            .details-container {
+            .details-container, .cantine-container {
                 grid-template-columns: 1fr;
             }
             .hero h1 {
@@ -309,6 +357,7 @@
         <nav>
             <ul>
                 <li><a href="#concept">Le Concept</a></li>
+                <li><a href="#cantine">La Cantine & Prix</a></li>
                 <li><a href="#kiosque">Le Kiosque</a></li>
                 <li><a href="#offres">Offre 0€</a></li>
                 <li><a href="#simulateur">Simulateur RH</a></li>
@@ -344,8 +393,48 @@
         </div>
     </section>
 
+    <!-- Cantine Fraîche & Connectée (Plats & Tarifs) -->
+    <section id="cantine" style="background: var(--light-bg);">
+        <h2 class="section-title">La Cantine Fraîche & Connectée</h2>
+        <p class="section-subtitle">Des plats cuisinés locaux à prix accessibles pour tous vos collaborateurs</p>
+        
+        <div class="cantine-container">
+            <div class="highlight-box" style="background: white;">
+                <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.5rem;">Une Carte Variée & Renouvelée</h3>
+                <p style="margin-bottom: 15px;">Chaque semaine, nos chefs proposent un large choix de repas complets adaptés à tous les régimes (végétarien, gourmand, équilibré).</p>
+                <p>Vos collaborateurs profitent de tarifs préférentiels directs, sans marge intermédiaire sur les repas.</p>
+            </div>
+            
+            <div class="cantine-menu-list">
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h4>🥗 Entrées & Salades Saison</h4>
+                        <p>Composition fraîche aux légumes régionaux</p>
+                    </div>
+                    <div class="price-badge">dès 3,90 €</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h4>🍲 Plats Cuisinés Chauds</h4>
+                        <p>Recettes généreuses préparées localement</p>
+                    </div>
+                    <div class="price-badge">dès 6,90 €</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-item-info">
+                        <h4>🍰 Desserts & Gourmandises</h4>
+                        <p>Pâtisseries, desserts fruités et pauses douceur</p>
+                    </div>
+                    <div class="price-badge">dès 2,50 €</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Kiosque Detail Section -->
-    <section id="kiosque" style="background: var(--light-bg);">
+    <section id="kiosque">
         <div class="details-container">
             <div class="details-text">
                 <h3>Le Kiosque Ascenseur Connecté</h3>
@@ -360,19 +449,19 @@
     </section>
 
     <!-- Offres Section -->
-    <section id="offres">
+    <section id="offres" style="background: var(--light-bg);">
         <h2 class="section-title">Une Offre 100% Zéro Coût pour l'Employeur</h2>
         <p class="section-subtitle">Un modèle économique transparent et sans mauvaise surprise</p>
         <div class="cards-grid">
-            <div class="card">
+            <div class="card" style="background: white;">
                 <h3>0€ d'Investissement</h3>
                 <p>L'installation, la mise en service et la logistique du kiosque sont intégralement prises en charge par nos équipes.</p>
             </div>
-            <div class="card">
+            <div class="card" style="background: white;">
                 <h3>Gestion Zéro Contrainte</h3>
                 <p>Nous assurons un réassort régulier, la maintenance préventive et le suivi qualité complet de la structure au quotidien.</p>
             </div>
-            <div class="card">
+            <div class="card" style="background: white;">
                 <h3>Autonomie Salariée</h3>
                 <p>Chaque collaborateur gère ses achats en toute autonomie directement sur le kiosque intelligent de l'entreprise.</p>
             </div>
