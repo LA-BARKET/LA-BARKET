@@ -353,28 +353,30 @@
         /* Contact Section */
         .contact-section {
             background: #ffffff;
-        }.contact-form {
-    max-width: 650px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
+        }
 
-.contact-form input, .contact-form textarea {
-    padding: 14px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    width: 100%;
-    font-size: 1rem;
-    font-family: inherit;
-}
+        .contact-form {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
-.contact-form input:focus, .contact-form textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(24, 69, 173, 0.15);
-}
+        .contact-form input, .contact-form textarea {
+            padding: 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(24, 69, 173, 0.15);
+        }
 
         /* Footer */
         footer {
@@ -586,11 +588,9 @@
     <section id="contact" class="contact-section">
         <h2 class="section-title">Discutons de Votre Projet à Quimper</h2>
         <p class="section-subtitle">Contactez-nous pour organiser une présentation ou une dégustation</p>
-        <!-- Formulaire configuré pour envoyer directement vers compta.labarket@gmail.com via FormSubmit -->
-        <form class="contact-form" action="https://formsubmit.co/compta.labarket@gmail.com" method="POST">
-            <!-- Optionnel : désactive le captcha pour fluidifier l'envoi -->
-            <input type="hidden" name="_captcha" value="false">
-            
+        
+        <!-- Formulaire de contact sécurisé envoi direct email sans dépendance de serveur externe -->
+        <form class="contact-form" onsubmit="event.preventDefault(); window.location.href='mailto:compta.labarket@gmail.com?subject=Demande de contact La Barket - ' + encodeURIComponent(this.entreprise.value)&body=' + encodeURIComponent('Entreprise: ' + this.entreprise.value + '\nNom: ' + this.nom.value + '\nEmail: ' + this.email.value + '\nTéléphone: ' + this.telephone.value + '\nMessage: ' + this.message.value);">
             <input type="text" name="entreprise" placeholder="Nom de l'entreprise (ex: Zone Créac'h Gwen)" required>
             <input type="text" name="nom" placeholder="Votre Nom et Prénom" required>
             <input type="email" name="email" placeholder="Adresse Email professionnelle" required>
