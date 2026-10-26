@@ -1,532 +1,336 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Barket Quimper | Restauration Connectée & Fraîche pour Entreprises</title>
-    <meta name="description" content="Solution de restauration d'entreprise clé en main à Quimper et Finistère. Kiosques réfrigérés connectés à ascenseur doux. Plats frais, locaux et de saison 24/7.">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        barket: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0284c7', // Primary Accent Blue
-                            600: '#0369a1',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#0f172a', // Deep Navy
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>La Barket - Solutions Repas & Pausse Gourmande B2B Quimper</title>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
+        :root {
+            --primary: #2B4C9B;
+            --primary-dark: #1E356D;
+            --accent: #E65100;
+            --light-bg: #F4F6FB;
+            --text: #2C3E50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        /* Header Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 80px 5% 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s, background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #d84315;
+        }
+
+        /* Sections General */
+        section {
+            padding: 60px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        /* Concept Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--light-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Simulator Section */
+        .simulator-box {
+            background: var(--light-bg);
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .result-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 8px;
+            color: #2e7d32;
+            font-size: 1.1rem;
+            text-align: center;
+            display: none;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #ffffff;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            width: 100%;
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 30px 5%;
+            margin-top: 40px;
+        }
+
+        footer .logo-img {
+            filter: brightness(0) invert(1);
+            height: 40px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 10px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-sky-500 selection:text-white">
+<body>
 
-    <!-- NAVIGATION HEADER -->
-    <header class="sticky top-0 z-50 glass-card transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- LOGO LA BARKET BLEU -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-barket-900 via-barket-700 to-barket-500 p-2.5 shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform flex items-center justify-center">
-                    <svg viewBox="0 0 100 100" class="w-full h-full text-white fill-current">
-                        <path d="M15 45 C15 40 20 35 30 35 L70 35 C80 35 85 40 85 45 L80 75 C78 83 70 88 60 88 L40 88 C30 88 22 83 20 75 Z" opacity="0.9"/>
-                        <path d="M25 35 Q50 20 75 35 Q50 30 25 35" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                        <circle cx="50" cy="22" r="5"/>
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-2xl font-extrabold tracking-tight text-barket-900 leading-none">LA BARKET</span>
-                    <span class="text-xs font-semibold tracking-widest text-barket-500 uppercase mt-0.5">QUIMPER & FINISTÈRE</span>
-                </div>
-            </a>
-
-            <!-- NAV LINKS DESKTOP -->
-            <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
-                <a href="#concept" class="hover:text-barket-500 transition-colors">Concept</a>
-                <a href="#kiosque" class="hover:text-barket-500 transition-colors">Notre Kiosque</a>
-                <a href="#menu" class="hover:text-barket-500 transition-colors">La Carte Fraîche</a>
-                <a href="#zones" class="hover:text-barket-500 transition-colors">Implantation</a>
-                <a href="#simulateur" class="hover:text-barket-500 transition-colors">Simulateur RH</a>
-            </nav>
-
-            <!-- CTA BUTTON -->
-            <div class="hidden md:flex items-center gap-4">
-                <a href="#contact" class="bg-barket-500 hover:bg-barket-600 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:-translate-y-0.5 transition-all text-sm flex items-center gap-2">
-                    <i class="fa-solid fa-utensils"></i>
-                    <span>Dégustation Gratuite</span>
-                </a>
-            </div>
-
-            <!-- MOBILE MENU BUTTON -->
-            <button id="mobile-menu-btn" class="md:hidden text-slate-700 text-2xl focus:outline-none p-2">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- MOBILE MENU DROPDOWN -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4">
-            <a href="#concept" class="block text-slate-700 font-medium hover:text-barket-500">Concept</a>
-            <a href="#kiosque" class="block text-slate-700 font-medium hover:text-barket-500">Notre Kiosque</a>
-            <a href="#menu" class="block text-slate-700 font-medium hover:text-barket-500">La Carte Fraîche</a>
-            <a href="#zones" class="block text-slate-700 font-medium hover:text-barket-500">Implantation</a>
-            <a href="#simulateur" class="block text-slate-700 font-medium hover:text-barket-500">Simulateur RH</a>
-            <a href="#contact" class="block bg-barket-500 text-white text-center font-bold py-3 rounded-xl shadow-md">Demander une dégustation</a>
-        </div>
+    <!-- Header Navigation -->
+    <header>
+        <a href="#" class="logo-container">
+            <img src="logo.png" alt="La Barket Logo" class="logo-img" onerror="this.style.display='none'">
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#concept">Notre Concept</a></li>
+                <li><a href="#simulateur">Simulateur RH</a></li>
+                <li><a href="#offres">Offre Zero-Coût</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden bg-gradient-to-b from-sky-50/50 via-white to-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-100 text-barket-600 font-semibold text-xs sm:text-sm border border-sky-200/80 shadow-sm">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>Solution Restauration 24/7 B2B • Quimper, Créac'h Gwen & Brest</span>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>La Pause Déjeuner Nouvelle Génération à Quimper</h1>
+        <p>Offrez à vos collaborateurs des repas frais, locaux et variés directement au sein de votre entreprise. Une solution clé en main, 100% zéro coût pour l'employeur.</p>
+        <a href="#contact" class="btn">Demander une démonstration gratuite</a>
+    </section>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-barket-900 tracking-tight leading-tight">
-                        La cantine fraîche & connectée de vos salariés, <span class="bg-gradient-to-r from-barket-500 to-sky-400 bg-clip-text text-transparent">sans aucun coût pour l'entreprise.</span>
-                    </h1>
-
-                    <p class="text-lg sm:text-xl text-slate-600 max-w-2xl font-normal leading-relaxed mx-auto lg:mx-0">
-                        Offrez des repas complets, frais et locaux à vos équipes grâce à nos kiosques réfrigérés intelligents équipés d'un ascenseur doux. Une pause déjeuner gourmande et sans gestion.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a href="#contact" class="w-full sm:w-auto bg-barket-500 hover:bg-barket-600 text-white font-extrabold px-8 py-4 rounded-xl shadow-xl shadow-sky-500/30 hover:shadow-sky-500/50 hover:-translate-y-1 transition-all text-base text-center flex items-center justify-center gap-3">
-                            <span>Installer un Kiosque sur Site</span>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a href="#kiosque" class="w-full sm:w-auto bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-bold px-8 py-4 rounded-xl transition-all text-base text-center flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-circle-play text-barket-500"></i>
-                            <span>Découvrir le Kiosque</span>
-                        </a>
-                    </div>
-
-                    <!-- REASSURANCE BADGES -->
-                    <div class="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4 text-center lg:text-left">
-                        <div>
-                            <p class="text-2xl font-extrabold text-barket-900">0 €</p>
-                            <p class="text-xs text-slate-500 font-medium">Investissement Entreprise</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-extrabold text-barket-900">100%</p>
-                            <p class="text-xs text-slate-500 font-medium">Frais, Fait-Maison & Saison</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl font-extrabold text-barket-900">24/7</p>
-                            <p class="text-xs text-slate-500 font-medium">Disponibilité Continue</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HERO IMAGE / MOCKUP KIOSQUE -->
-                <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-sm sm:max-w-md lg:max-w-none">
-                        <div class="absolute -inset-4 bg-gradient-to-r from-sky-400 to-barket-600 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
-                        
-                        <div class="relative glass-card rounded-3xl p-6 shadow-2xl border border-white/60 space-y-6">
-                            <!-- VISUEL KIOSQUE REFRIGÉRÉ -->
-                            <div class="bg-gradient-to-b from-barket-900 to-slate-900 rounded-2xl p-6 text-white relative overflow-hidden shadow-inner">
-                                <div class="flex justify-between items-center border-b border-slate-800 pb-4 mb-4">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></div>
-                                        <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Kiosque En Ligne (3.5°C)</span>
-                                    </div>
-                                    <span class="text-xs text-slate-400"><i class="fa-solid fa-wifi mr-1"></i> Telemetrie 4G</span>
-                                </div>
-
-                                <!-- VITRINE INTERACTIVE DÉMO -->
-                                <div class="space-y-3 my-6">
-                                    <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 flex items-center justify-between">
-                                        <div class="flex items-center gap-3">
-                                            <span class="text-2xl">🥗</span>
-                                            <div>
-                                                <p class="text-sm font-bold">Salade Pokè Saumon & Avocat</p>
-                                                <p class="text-xs text-slate-400">Préparé ce matin • Produit Local</p>
-                                            </div>
-                                        </div>
-                                        <span class="font-bold text-sky-400 text-sm">8,90 €</span>
-                                    </div>
-
-                                    <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 flex items-center justify-between">
-                                        <div class="flex items-center gap-3">
-                                            <span class="text-2xl">🍲</span>
-                                            <div>
-                                                <p class="text-sm font-bold">Sauté de Volaille au Cidre Breton</p>
-                                                <p class="text-xs text-slate-400">Plat chaud à réchauffer</p>
-                                            </div>
-                                        </div>
-                                        <span class="font-bold text-sky-400 text-sm">9,50 €</span>
-                                    </div>
-
-                                    <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700/60 flex items-center justify-between">
-                                        <div class="flex items-center gap-3">
-                                            <span class="text-2xl">🍰</span>
-                                            <div>
-                                                <p class="text-sm font-bold">Kouign-Amann Artisanal Individuel</p>
-                                                <p class="text-xs text-slate-400">Pâtisserie Locale</p>
-                                            </div>
-                                        </div>
-                                        <span class="font-bold text-sky-400 text-sm">3,20 €</span>
-                                    </div>
-                                </div>
-
-                                <!-- ASCENSEUR SIMULATEUR ANIMATION -->
-                                <div class="bg-slate-800/90 rounded-xl p-3 border border-sky-500/30 flex items-center justify-between text-xs text-sky-300">
-                                    <span class="flex items-center gap-2">
-                                        <i class="fa-solid fa-angles-down text-barket-400 animate-bounce"></i>
-                                        <span>Système Ascenseur Doux Anti-Chute</span>
-                                    </span>
-                                    <span class="bg-barket-500/20 text-sky-300 px-2 py-1 rounded font-mono">MDB/Nayax</span>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center justify-between text-slate-600 text-xs font-semibold px-2">
-                                <span><i class="fa-solid fa-credit-card mr-1 text-barket-500"></i> CB & Sans Contact</span>
-                                <span><i class="fa-solid fa-ticket mr-1 text-barket-500"></i> Cartes Tickets Resto</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+    <!-- Concept Section -->
+    <section id="concept">
+        <h2 class="section-title">Pourquoi choisir La Barket ?</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>🚀 Kiosque Intelligent</h3>
+                <p>Un système ascenseur innovant qui garantit des plats préservés, frais et disponibles 24/7 dans vos locaux.</p>
+            </div>
+            <div class="card">
+                <h3>🥗 Qualité & Proximité</h3>
+                <p>Des recettes concoctées avec des produits régionaux du Finistère, adaptées à tous les régimes alimentaires.</p>
+            </div>
+            <div class="card">
+                <h3>💼 Engagement RH & RSE</h3>
+                <p>Améliorez la qualité de vie au travail (QVT) et l'attractivité de votre entreprise à Créac'h Gwen et Gourvily.</p>
             </div>
         </div>
     </section>
 
-    <!-- SECTION CONCEPT & AVANTAGES -->
-    <section id="concept" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-barket-500">Pourquoi Choisir La Barket</h2>
-                <p class="text-3xl sm:text-4xl font-extrabold text-barket-900 tracking-tight">Une alternative moderne, saine et économique à la cantine traditionnelle.</p>
+    <!-- Offres Section -->
+    <section id="offres" style="background: var(--light-bg);">
+        <h2 class="section-title">Une Installation à Zéro Coût</h2>
+        <div class="cards-grid">
+            <div class="card" style="background: white;">
+                <h3>0€ d'Investissement</h3>
+                <p>Nous prenons en charge l'installation, la gestion du stock, l'entretien et la maintenance de votre kiosque.</p>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- AVANTAGE 1 -->
-                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:shadow-xl transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-100 text-barket-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-barket-500 group-hover:text-white transition-all">
-                        <i class="fa-solid fa-piggy-bank"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-barket-900 mb-3">0€ de Coût d'Installation</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Mise à disposition, installation, maintenance et réapprovisionnement 100% gérés par nos soins. Aucun investissement ni coût d'abonnement pour votre entreprise.
-                    </p>
-                </div>
-
-                <!-- AVANTAGE 2 -->
-                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:shadow-xl transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-100 text-barket-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-barket-500 group-hover:text-white transition-all">
-                        <i class="fa-solid fa-leaf"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-barket-900 mb-3">Produits Frais & Locaux</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Des recettes équilibrées renouvelées quotidiennement, cuisinées avec des ingrédients locaux provenant du Finistère et de Bretagne.
-                    </p>
-                </div>
-
-                <!-- AVANTAGE 3 -->
-                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:shadow-xl transition-all group">
-                    <div class="w-14 h-14 rounded-2xl bg-sky-100 text-barket-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-barket-500 group-hover:text-white transition-all">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-barket-900 mb-3">Flexibilité & Sécurité 24/7</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Parfait pour les équipes en horaires décalés, 2x8, 3x8 ou réunions tardives. Respect strict et continu de la chaîne du froid grâce à la télémétrie intelligente.
-                    </p>
-                </div>
+            <div class="card" style="background: white;">
+                <h3>Simplicité Totale</h3>
+                <p>Une prise électrique standard suffit. Vos collaborateurs paient directement leurs repas via le kiosque connecté.</p>
             </div>
         </div>
     </section>
 
-    <!-- SECTION KIOSQUE TECHNIQUE -->
-    <section id="kiosque" class="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                
-                <div class="space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-500/20 text-sky-300 text-xs font-semibold border border-sky-500/30">
-                        <i class="fa-solid fa-microchip"></i>
-                        <span>Technologie d'Élévation Brevetée</span>
-                    </div>
-
-                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Un Kiosque Haute Capacité Conçu pour la Restauration Fraîche</h2>
-
-                    <p class="text-slate-300 text-base leading-relaxed">
-                        Contrairement aux distributeurs automatiques classiques à spirales, notre équipement intègre un **ascenseur motorisé doux** garantissant la descente de vos plats, bocaux et salades sans aucun choc ni basculement.
-                    </p>
-
-                    <ul class="space-y-4 pt-2">
-                        <li class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-sm mt-0.5"><i class="fa-solid fa-check"></i></div>
-                            <div>
-                                <span class="font-bold text-white">Ascenseur Interne Motorisé :</span>
-                                <span class="text-slate-300 text-sm"> Préservation totale du visuel et de la structure des plats cuisinés.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-sm mt-0.5"><i class="fa-solid fa-check"></i></div>
-                            <div>
-                                <span class="font-bold text-white">Monétique Universelle NAYAX :</span>
-                                <span class="text-slate-300 text-sm"> Paiement CB, Apple/Google Pay, Cartes Swile, Edenred, Sodexo, Pluxee.</span>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-sky-500/20 text-sky-400 flex items-center justify-center text-sm mt-0.5"><i class="fa-solid fa-check"></i></div>
-                            <div>
-                                <span class="font-bold text-white">Gestion des Stocks par Télémétrie :</span>
-                                <span class="text-slate-300 text-sm"> Réapprovisionnement automatique sur mesure pour éviter toute rupture.</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="bg-slate-800/80 rounded-3xl p-8 border border-slate-700 space-y-6">
-                    <h3 class="text-xl font-bold text-sky-400 border-b border-slate-700 pb-4">Spécifications Techniques</h3>
-                    
-                    <div class="grid grid-cols-2 gap-4 text-sm">
-                        <div class="bg-slate-900/60 p-4 rounded-xl">
-                            <p class="text-slate-400 text-xs">Température</p>
-                            <p class="text-lg font-bold text-white">3°C à 5°C Constant</p>
-                        </div>
-                        <div class="bg-slate-900/60 p-4 rounded-xl">
-                            <p class="text-slate-400 text-xs">Emprise au Sol</p>
-                            <p class="text-lg font-bold text-white">&lt; 1,5 m²</p>
-                        </div>
-                        <div class="bg-slate-900/60 p-4 rounded-xl">
-                            <p class="text-slate-400 text-xs">Alimentation</p>
-                            <p class="text-lg font-bold text-white">Prise 230V Standard</p>
-                        </div>
-                        <div class="bg-slate-900/60 p-4 rounded-xl">
-                            <p class="text-slate-400 text-xs">Connectivité</p>
-                            <p class="text-lg font-bold text-white">4G IoT Intégrée</p>
-                        </div>
-                    </div>
-
-                    <div class="p-4 rounded-xl bg-barket-500/10 border border-barket-500/30 text-sky-200 text-xs flex items-center gap-3">
-                        <i class="fa-solid fa-shield-halved text-2xl text-sky-400"></i>
-                        <span>Conforme aux normes de sécurité sanitaire HACCP avec verrouillage automatique en cas de rupture de froid.</span>
-                    </div>
-                </div>
-
+    <!-- Simulator Section -->
+    <section id="simulateur">
+        <h2 class="section-title">Simulateur d'Impact RH & Bien-être</h2>
+        <div class="simulator-box">
+            <div class="form-group">
+                <label for="employees">Nombre de collaborateurs dans votre établissement :</label>
+                <input type="number" id="employees" placeholder="Ex: 50" min="10" oninput="calculateImpact()">
+            </div>
+            <div id="sim-result" class="result-box">
+                <p>Pour vos <strong id="res-count">0</strong> salariés :</p>
+                <p><strong>+<span id="res-hours">0</span> heures</strong> de pause optimisées par mois.</p>
+                <p><strong>100%</strong> d'amélioration du bien-être au travail !</p>
             </div>
         </div>
     </section>
 
-    <!-- SIMULATEUR RH -->
-    <section id="simulateur" class="py-20 bg-slate-100">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-xl border border-slate-200 text-center space-y-8">
-                
-                <div class="space-y-3">
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-barket-900">Simulateur d'Attractivité RH pour votre Entreprise</h2>
-                    <p class="text-slate-600 text-sm max-w-xl mx-auto">Découvrez l'impact direct de la mise en place d'un kiosque La Barket sur votre site.</p>
-                </div>
-
-                <!-- SLIDER EFFECTIF -->
-                <div class="max-w-md mx-auto space-y-4">
-                    <div class="flex justify-between items-center text-sm font-bold text-slate-700">
-                        <span>Effectif sur votre site :</span>
-                        <span id="employee-count" class="text-2xl font-extrabold text-barket-500">120 personnes</span>
-                    </div>
-                    <input type="range" id="employee-range" min="30" max="500" value="120" step="10" 
-                           class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-barket-500">
-                </div>
-
-                <!-- RESULTAT DYNAMIQUE -->
-                <div class="grid sm:grid-cols-3 gap-6 pt-6 border-t border-slate-100">
-                    <div class="bg-sky-50 p-6 rounded-2xl border border-sky-100">
-                        <p class="text-xs text-slate-500 font-semibold uppercase">Repas/Semaine Estimés</p>
-                        <p id="meals-estimate" class="text-3xl font-extrabold text-barket-900 mt-2">180</p>
-                    </div>
-                    <div class="bg-sky-50 p-6 rounded-2xl border border-sky-100">
-                        <p class="text-xs text-slate-500 font-semibold uppercase">Coût Pour l'Entreprise</p>
-                        <p class="text-3xl font-extrabold text-emerald-600 mt-2">0 €</p>
-                    </div>
-                    <div class="bg-sky-50 p-6 rounded-2xl border border-sky-100">
-                        <p class="text-xs text-slate-500 font-semibold uppercase">Gain de Temps / Salarié</p>
-                        <p class="text-3xl font-extrabold text-barket-900 mt-2">25 min/jour</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Contactez l'Équipe La Barket Quimper</h2>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Merci pour votre message ! L\'équipe La Barket vous recontactera rapidement.');">
+            <input type="text" placeholder="Nom de l'entreprise" required>
+            <input type="text" placeholder="Votre Nom et Prénom" required>
+            <input type="email" placeholder="Adresse Email professionnelle" required>
+            <input type="tel" placeholder="Téléphone">
+            <textarea rows="4" placeholder="Votre message ou localisation (ex: Zone Créac'h Gwen)"></textarea>
+            <button type="submit" class="btn">Envoyer la demande</button>
+        </form>
     </section>
 
-    <!-- SECTEURS & ZONES D'IMPLANTATION -->
-    <section id="zones" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h2 class="text-xs font-bold uppercase tracking-widest text-barket-500">Territoire d'Intervention</h2>
-                <p class="text-3xl font-extrabold text-barket-900">Présents à Quimper et sur tout le Finistère</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <i class="fa-solid fa-building text-2xl text-barket-500 mb-3"></i>
-                    <h3 class="font-bold text-barket-900">Quimper - Créac'h Gwen</h3>
-                    <p class="text-xs text-slate-500 mt-2">Zone tertiaire, centres d'affaires, laboratoires & bureaux d'études.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <i class="fa-solid fa-industry text-2xl text-barket-500 mb-3"></i>
-                    <h3 class="font-bold text-barket-900">Z.I. Gourvily & Hippodrome</h3>
-                    <p class="text-xs text-slate-500 mt-2">Sites industriels, transports, logistique & ateliers 2x8 / 3x8.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <i class="fa-solid fa-warehouse text-2xl text-barket-500 mb-3"></i>
-                    <h3 class="font-bold text-barket-900">Pluguffan / Ergué-Gabéric</h3>
-                    <p class="text-xs text-slate-500 mt-2">Pôles d'innovation, aéronautique & grandes unités de production.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                    <i class="fa-solid fa-city text-2xl text-barket-500 mb-3"></i>
-                    <h3 class="font-bold text-barket-900">Brest Métropole & Axe N165</h3>
-                    <p class="text-xs text-slate-500 mt-2">Technopôle Brest-Iroise, Landerneau & parcs d'activités majeurs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORMULAIRE DE CONTACT B2B -->
-    <section id="contact" class="py-20 bg-slate-900 text-white relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-slate-800 rounded-3xl p-8 sm:p-12 border border-slate-700 shadow-2xl space-y-8">
-                
-                <div class="text-center space-y-3">
-                    <h2 class="text-3xl font-extrabold text-white">Demandez votre Dégustation Gratuite sur Site</h2>
-                    <p class="text-slate-300 text-sm">Nous installons temporairement un Kiosque de démonstration dans vos locaux avec dégustation offerte à votre équipe de direction ou CSE.</p>
-                </div>
-
-                <form id="b2b-form" class="space-y-6">
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Nom & Prénom</label>
-                            <input type="text" required placeholder="ex: Jean Dupont" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-barket-500">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Nom de l'Entreprise</label>
-                            <input type="text" required placeholder="ex: Verlingue, Krampouz..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-barket-500">
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Email Professionnel</label>
-                            <input type="email" required placeholder="j.dupont@entreprise.fr" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-barket-500">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Téléphone</label>
-                            <input type="tel" required placeholder="06 00 00 00 00" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-barket-500">
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Ville / Zone</label>
-                            <input type="text" placeholder="ex: Quimper Créac'h Gwen" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-barket-500">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Effectif du Site</label>
-                            <select class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-barket-500">
-                                <option>20 à 50 salariés</option>
-                                <option>50 à 150 salariés</option>
-                                <option>150 à 300 salariés</option>
-                                <option>Plus de 300 salariés</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">Message ou Précisions (Optionnel)</label>
-                        <textarea rows="3" placeholder="Présentez brièvement votre besoin..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-barket-500"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full bg-barket-500 hover:bg-barket-600 text-white font-extrabold py-4 rounded-xl shadow-lg shadow-sky-500/30 transition-all text-base flex items-center justify-center gap-3">
-                        <i class="fa-solid fa-paper-plane"></i>
-                        <span>Envoyer ma demande de dégustation</span>
-                    </button>
-                </form>
-
-                <div id="form-success" class="hidden bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 p-6 rounded-xl text-center space-y-2">
-                    <p class="font-extrabold text-lg"><i class="fa-solid fa-circle-check mr-2"></i> Message bien reçu !</p>
-                    <p class="text-sm">Un conseiller La Barket Quimper vous recontactera sous 24h ouvrées pour organiser la présentation.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 text-slate-500 py-12 border-t border-slate-800 text-xs">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-barket-500 flex items-center justify-center text-white font-bold text-sm">
-                    LB
-                </div>
-                <span class="text-slate-300 font-bold text-sm">LA BARKET QUIMPER</span>
-            </div>
-            <p>© 2026 La Barket Distribution - Service aux Entreprises de Bretagne & Finistère.</p>
-            <div class="flex gap-6">
-                <a href="#" class="hover:text-slate-300">Mentions Légales</a>
-                <a href="#" class="hover:text-slate-300">Confidentialité</a>
-                <a href="#" class="hover:text-slate-300">Contact B2B</a>
-            </div>
-        </div>
+    <!-- Footer -->
+    <footer>
+        <img src="logo.png" alt="La Barket" class="logo-img" onerror="this.style.display='none'">
+        <p>&copy; 2026 La Barket - Solutions de Restauration B2B Quimper & Finistère.</p>
     </footer>
 
-    <!-- JAVASCRIPT LÉGER POUR INTERACTIVITÉ -->
     <script>
-        // Menu mobile toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Simulateur dynamique RH
-        const range = document.getElementById('employee-range');
-        const countDisplay = document.getElementById('employee-count');
-        const mealsDisplay = document.getElementById('meals-estimate');
-
-        range.addEventListener('input', (e) => {
-            const val = e.target.value;
-            countDisplay.textContent = val + " personnes";
-            // Estimation ~1.5 repas par salarié et par semaine
-            mealsDisplay.textContent = Math.round(val * 1.5);
-        });
-
-        // Formulaire submit simulation
-        const form = document.getElementById('b2b-form');
-        const successMsg = document.getElementById('form-success');
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            form.classList.add('hidden');
-            successMsg.classList.remove('hidden');
-        });
+        function calculateImpact() {
+            const count = document.getElementById('employees').value;
+            const resultBox = document.getElementById('sim-result');
+            
+            if (count && count > 0) {
+                document.getElementById('res-count').textContent = count;
+                document.getElementById('res-hours').textContent = Math.round(count * 1.5);
+                resultBox.style.display = 'block';
+            } else {
+                resultBox.style.display = 'none';
+            }
+        }
     </script>
 </body>
 </html>
