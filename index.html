@@ -166,41 +166,27 @@
             background: var(--light-bg);
         }
 
-        .quimper-grid {
-            max-width: 1100px;
+        .quimper-card-full {
+            max-width: 900px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .quimper-box {
             background: white;
-            padding: 35px;
+            padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(24, 69, 173, 0.06);
             border-left: 5px solid var(--primary);
+            text-align: center;
         }
 
-        .quimper-box h3 {
+        .quimper-card-full h3 {
             color: var(--primary);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 15px;
         }
 
-        .quimper-box p {
+        .quimper-card-full p {
             color: #555;
-            margin-bottom: 12px;
-        }
-
-        .img-featured {
-            width: 100%;
-            height: 350px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            object-fit: cover;
-            background-color: #f1f5f9;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
         }
 
         .kiosque-haute-capacite {
@@ -209,24 +195,21 @@
             margin: 0 auto;
         }
 
-        .kiosque-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .kiosque-specs {
+        .kiosque-card-full {
             background: var(--light-bg);
             border-left: 5px solid var(--primary);
-            padding: 30px;
-            border-radius: 10px;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(24, 69, 173, 0.06);
         }
 
-        .kiosque-specs h3 {
+        .kiosque-card-full h3 {
             color: var(--primary);
             font-size: 1.6rem;
             margin-bottom: 15px;
+            text-align: center;
         }
 
         .specs-list {
@@ -234,12 +217,15 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .specs-list li {
             position: relative;
             padding-left: 28px;
             color: #333;
+            font-size: 1.05rem;
         }
 
         .specs-list li::before {
@@ -395,9 +381,6 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            .quimper-grid, .kiosque-grid {
-                grid-template-columns: 1fr;
-            }
             .hero h1 {
                 font-size: 2rem;
             }
@@ -451,43 +434,32 @@
         </div>
     </section>
 
-    <!-- Section Quimper -->
+    <!-- Section Quimper (Sans image hors sujet) -->
     <section id="quimper" class="solution-quimper">
         <h2 class="section-title">La Solution La Barket Quimper & Finistère</h2>
         <p class="section-subtitle">Un service de proximité pensé sur-mesure pour les entreprises locales</p>
         
-        <div class="quimper-grid">
-            <div class="quimper-box">
-                <h3>Ancrage Local & Finistérien</h3>
-                <p>Implantés au cœur de Quimper, nous intervenons rapidement sur toutes les zones d'activités (Créac'h Gwen, Gourvily, Pabu, etc.).</p>
-                <p>Nous collaborons étroitement avec des artisans et producteurs locaux pour garantir une cuisine authentique, saine et de saison.</p>
-            </div>
-            <div>
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Boutique & Équipe La Barket Quimper" class="img-featured">
-            </div>
+        <div class="quimper-card-full">
+            <h3>Ancrage Local & Finistérien</h3>
+            <p>Implantés au cœur de Quimper, nous intervenons rapidement sur toutes les zones d'activités (Créac'h Gwen, Gourvily, Pabu, etc.).</p>
+            <p>Nous collaborons étroitement avec des artisans et producteurs locaux pour garantir une cuisine authentique, saine, de saison et valorisant les circuits courts.</p>
         </div>
     </section>
 
-    <!-- Section Kiosque -->
+    <!-- Section Kiosque (Sans image hors sujet) -->
     <section id="kiosque" class="kiosque-haute-capacite">
         <h2 class="section-title">Un Kiosque Haute Capacité Conçu pour la Restauration Fraîche</h2>
         <p class="section-subtitle">Une technologie moderne pour répondre aux besoins des petites comme des grandes équipes</p>
         
-        <div class="kiosque-grid">
-            <div>
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Distributeur Kiosque Connecté La Barket" class="img-featured">
-            </div>
-
-            <div class="kiosque-specs">
-                <h3>Performance & Technologie Ascenseur</h3>
-                <p style="margin-bottom: 20px; color: #555;">Notre distributeur intelligent garantit la conservation optimale de la chaîne du froid et la sécurité des emballages lors de la délivrance du repas.</p>
-                <ul class="specs-list">
-                    <li><strong>Haute capacité :</strong> Stockage important pour servir tous vos collaborateurs sans rupture.</li>
-                    <li><strong>Système ascenseur doux :</strong> Traitement délicat de chaque plat pour préserver la présentation.</li>
-                    <li><strong>Gestion thermique intelligente :</strong> Maintien constant entre +2°C et +4°C.</li>
-                    <li><strong>Paiement sans contact :</strong> Titres-restaurant, CB et smartphone acceptés en 3 secondes.</li>
-                </ul>
-            </div>
+        <div class="kiosque-card-full">
+            <h3>Performance & Technologie Ascenseur</h3>
+            <p style="margin-bottom: 25px; color: #555; text-align: center;">Notre distributeur intelligent garantit la conservation optimale de la chaîne du froid et la sécurité des emballages lors de la délivrance du repas.</p>
+            <ul class="specs-list">
+                <li><strong>Haute capacité :</strong> Stockage important pour servir tous vos collaborateurs sans rupture.</li>
+                <li><strong>Système ascenseur doux :</strong> Traitement délicat de chaque plat pour préserver la présentation.</li>
+                <li><strong>Gestion thermique intelligente :</strong> Maintien constant entre +2°C et +4°C.</li>
+                <li><strong>Paiement sans contact :</strong> Titres-restaurant, CB et smartphone acceptés en 3 secondes.</li>
+            </ul>
         </div>
     </section>
 
