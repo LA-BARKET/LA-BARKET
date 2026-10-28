@@ -200,6 +200,14 @@
             margin-bottom: 12px;
         }
 
+        .img-featured {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            object-fit: cover;
+        }
+
         /* Section Haute Capacité */
         .kiosque-haute-capacite {
             background: #ffffff;
@@ -249,52 +257,48 @@
             font-size: 1.2rem;
         }
 
-        /* Section Cantine & Plats/Prix */
-        .cantine-container {
-            max-width: 1100px;
-            margin: 0 auto;
+        /* Section Cantine & Galerie de Plats */
+        .dishes-gallery {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .cantine-menu-list {
-            display: flex;
-            flex-direction: column;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto 0;
         }
 
-        .menu-item {
+        .dish-card {
             background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s;
         }
 
-        .menu-item-info h4 {
+        .dish-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dish-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .dish-card-info {
+            padding: 15px;
+        }
+
+        .dish-card-info h4 {
             color: var(--primary);
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 5px;
         }
 
-        .menu-item-info p {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .price-badge {
-            background: var(--primary);
-            color: white;
+        .dish-card-info span {
+            color: var(--accent);
             font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 1.1rem;
-            white-space: nowrap;
+            font-size: 0.95rem;
         }
 
         .highlight-box {
@@ -407,7 +411,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            .quimper-grid, .kiosque-grid, .cantine-container {
+            .quimper-grid, .kiosque-grid {
                 grid-template-columns: 1fr;
             }
             .hero h1 {
@@ -428,7 +432,7 @@
                 <li><a href="#concept">Concept</a></li>
                 <li><a href="#quimper">La Solution Quimper</a></li>
                 <li><a href="#kiosque">Kiosque & Frigo</a></li>
-                <li><a href="#cantine">Cantine & Prix</a></li>
+                <li><a href="#cantine">Cantine & Plats</a></li>
                 <li><a href="#offres">Offre 0€</a></li>
                 <li><a href="#simulateur">Simulateur</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -470,14 +474,12 @@
         
         <div class="quimper-grid">
             <div class="quimper-box">
-                <h3>Ancrage Local & Finistérien</h3>
+                <h3>Ancrage Local & Équipe Passionnée</h3>
                 <p>Implantés au cœur de Quimper, nous intervenons rapidement sur toutes les zones d'activités (Créac'h Gwen, Gourvily, Pabu, etc.).</p>
-                <p>Nous collaborons étroitement avec des artisans et producteurs locaux pour garantir une cuisine authentique, saine et de saison.</p>
+                <p>Notre équipe collabore étroitement avec des artisans et producteurs locaux pour vous proposer une cuisine authentique, saine et renouvelée au fil des saisons.</p>
             </div>
-            <div class="quimper-box">
-                <h3>Le Frigo Connecté Zéro Contrainte</h3>
-                <p>Alternative ou complément de notre kiosque, le <strong>frigo connecté</strong> s’intègre partout avec une simplicité absolue.</p>
-                <p>Ouverture sécurisée par badge ou application, choix du plat en un geste, débit automatique : un mode de distribution ultra-fluide pour le bien-être de vos salariés.</p>
+            <div>
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Équipe La Barket Quimper" class="img-featured">
             </div>
         </div>
     </section>
@@ -488,60 +490,66 @@
         <p class="section-subtitle">Une technologie moderne pour répondre aux besoins des petites comme des grandes équipes</p>
         
         <div class="kiosque-grid">
+            <div>
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Distributeurs Kiosques La Barket" class="img-featured">
+            </div>
+
             <div class="kiosque-specs">
                 <h3>Performance & Technologie Ascenseur</h3>
                 <p style="margin-bottom: 20px; color: #555;">Notre distributeur intelligent garantit la conservation optimale de la chaîne du froid et la sécurité des emballages lors de la délivrance du repas.</p>
                 <ul class="specs-list">
-                    <li><strong>Haute capacité :</strong> Stockage important pour servir tous vos collaborateurs sans rupture.</li>
-                    <li><strong>Système ascenseur doux :</strong> Traitement délicat de chaque plat pour préserver la présentation.</li>
-                    <li><strong>Gestion thermique intelligente :</strong> Maintien constant entre +2°C et +4°C.</li>
-                    <li><strong>Paiement sans contact :</strong> Titres-restaurant, CB et smartphone acceptés en 3 secondes.</li>
+                    <li><strong>Haute capacité :</strong> Double distributeur pour servir tous vos collaborateurs sans aucun risque de rupture.</li>
+                    <li><strong>Système ascenseur doux :</strong> Traitement délicat de chaque plat pour préserver sa présentation d'origine.</li>
+                    <li><strong>Maintien au frais constant :</strong> Gestion thermique entre +2°C et +4°C.</li>
+                    <li><strong>Paiement sans contact :</strong> Carte bancaire, Titres-restaurant et smartphone acceptés en 3 secondes.</li>
                 </ul>
-            </div>
-
-            <div class="highlight-box">
-                <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.5rem;">Intégration Faible Encombrement</h3>
-                <p style="margin-bottom: 15px;">Le kiosque prend une place minimale au sol et s'adapte à tous vos espaces (salle de pause, cafétéria, couloir principal ou hall d'entrée).</p>
-                <p><strong>Aucun aménagement lourd :</strong> Un simple raccordement électrique classique 230V suffit pour une mise en service immédiate.</p>
             </div>
         </div>
     </section>
 
-    <!-- Cantine Fraîche & Connectée (Plats & Tarifs) -->
+    <!-- Cantine Fraîche & Galerie de Plats -->
     <section id="cantine" style="background: var(--light-bg);">
-        <h2 class="section-title">La Cantine Fraîche & Connectée</h2>
-        <p class="section-subtitle">Des plats cuisinés locaux à prix accessibles pour tous vos collaborateurs</p>
+        <h2 class="section-title">La Cantine Fraîche & Nos Recettes</h2>
+        <p class="section-subtitle">Découvrez quelques exemples de nos recettes gourmandes et équilibrées</p>
         
-        <div class="cantine-container">
-            <div class="highlight-box" style="background: white;">
-                <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 1.5rem;">Une Carte Variée & Renouvelée</h3>
-                <p style="margin-bottom: 15px;">Chaque semaine, nos chefs proposent un large choix de repas complets adaptés à tous les régimes (végétarien, gourmand, équilibré).</p>
-                <p>Vos collaborateurs profitent de tarifs préférentiels directs, sans marge intermédiaire sur les repas.</p>
+        <div class="dishes-gallery">
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Salade Roquefort">
+                <div class="dish-card-info">
+                    <h4>Salade Roquefort & Raisins</h4>
+                    <span>Entrée / Salade dès 3,90 €</span>
+                </div>
             </div>
-            
-            <div class="cantine-menu-list">
-                <div class="menu-item">
-                    <div class="menu-item-info">
-                        <h4>🥗 Entrées & Salades Saison</h4>
-                        <p>Composition fraîche aux légumes régionaux</p>
-                    </div>
-                    <div class="price-badge">dès 3,90 €</div>
-                </div>
 
-                <div class="menu-item">
-                    <div class="menu-item-info">
-                        <h4>🍲 Plats Cuisinés Chauds</h4>
-                        <p>Recettes généreuses préparées localement</p>
-                    </div>
-                    <div class="price-badge">dès 6,90 €</div>
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=600&q=80" alt="Crème de cèpes et parmesan">
+                <div class="dish-card-info">
+                    <h4>Crème de Cèpes & Parmesan</h4>
+                    <span>Plat chaud dès 6,90 €</span>
                 </div>
+            </div>
 
-                <div class="menu-item">
-                    <div class="menu-item-info">
-                        <h4>🍰 Desserts & Gourmandises</h4>
-                        <p>Pâtisseries, desserts fruités et pauses douceur</p>
-                    </div>
-                    <div class="price-badge">dès 2,50 €</div>
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=600&q=80" alt="Poulet à l'espagnole">
+                <div class="dish-card-info">
+                    <h4>Poulet à l'Espagnole & Chorizo</h4>
+                    <span>Plat chaud dès 6,90 €</span>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Moelleux au chocolat praliné">
+                <div class="dish-card-info">
+                    <h4>Moelleux Chocolat Praliné</h4>
+                    <span>Dessert dès 2,50 €</span>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Mousse à la figue de barbarie">
+                <div class="dish-card-info">
+                    <h4>Mousse Figue de Barbarie</h4>
+                    <span>Dessert dès 2,50 €</span>
                 </div>
             </div>
         </div>
@@ -589,8 +597,7 @@
         <h2 class="section-title">Discutons de Votre Projet à Quimper</h2>
         <p class="section-subtitle">Contactez-nous pour organiser une présentation ou une dégustation</p>
         
-        <!-- Formulaire de contact sécurisé envoi direct email sans dépendance de serveur externe -->
-        <form class="contact-form" onsubmit="event.preventDefault(); window.location.href='mailto:compta.labarket@gmail.com?subject=Demande de contact La Barket - ' + encodeURIComponent(this.entreprise.value)&body=' + encodeURIComponent('Entreprise: ' + this.entreprise.value + '\nNom: ' + this.nom.value + '\nEmail: ' + this.email.value + '\nTéléphone: ' + this.telephone.value + '\nMessage: ' + this.message.value);">
+        <form class="contact-form" onsubmit="event.preventDefault(); window.location.href='mailto:compta.labarket@gmail.com?subject=Demande de contact La Barket - ' + encodeURIComponent(this.entreprise.value)+'&body=' + encodeURIComponent('Entreprise: ' + this.entreprise.value + '\nNom: ' + this.nom.value + '\nEmail: ' + this.email.value + '\nTéléphone: ' + this.telephone.value + '\nMessage: ' + this.message.value);">
             <input type="text" name="entreprise" placeholder="Nom de l'entreprise (ex: Zone Créac'h Gwen)" required>
             <input type="text" name="nom" placeholder="Votre Nom et Prénom" required>
             <input type="email" name="email" placeholder="Adresse Email professionnelle" required>
