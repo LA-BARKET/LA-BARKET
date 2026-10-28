@@ -166,60 +166,80 @@
             background: var(--light-bg);
         }
 
-        .quimper-container {
-            max-width: 800px;
+        .quimper-grid {
+            max-width: 1100px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .quimper-box {
             background: white;
-            padding: 40px;
+            padding: 35px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(24, 69, 173, 0.06);
             border-left: 5px solid var(--primary);
-            text-align: center;
         }
 
-        .quimper-container h3 {
+        .quimper-box h3 {
             color: var(--primary);
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-        }
-
-        .quimper-container p {
-            color: #555;
+            font-size: 1.5rem;
             margin-bottom: 15px;
-            font-size: 1.05rem;
         }
 
-        .kiosque-container {
-            max-width: 900px;
+        .quimper-box p {
+            color: #555;
+            margin-bottom: 12px;
+        }
+
+        .img-featured {
+            width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            object-fit: cover;
+            background-color: #f1f5f9;
+        }
+
+        .kiosque-haute-capacite {
+            background: #ffffff;
+            max-width: 1100px;
             margin: 0 auto;
+        }
+
+        .kiosque-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .kiosque-specs {
             background: var(--light-bg);
             border-left: 5px solid var(--primary);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(24, 69, 173, 0.06);
+            padding: 30px;
+            border-radius: 10px;
         }
 
-        .kiosque-container h3 {
+        .kiosque-specs h3 {
             color: var(--primary);
             font-size: 1.6rem;
-            margin-bottom: 20px;
-            text-align: center;
+            margin-bottom: 15px;
         }
 
         .specs-list {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 15px;
-            max-width: 700px;
-            margin: 0 auto;
+            gap: 12px;
         }
 
         .specs-list li {
             position: relative;
             padding-left: 28px;
             color: #333;
-            font-size: 1.05rem;
         }
 
         .specs-list li::before {
@@ -375,6 +395,9 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
+            .quimper-grid, .kiosque-grid {
+                grid-template-columns: 1fr;
+            }
             .hero h1 {
                 font-size: 2rem;
             }
@@ -428,43 +451,56 @@
         </div>
     </section>
 
-    <!-- Section Quimper (Sans image gênante) -->
+    <!-- Section Quimper avec VOTRE VRAIE PHOTO de boutique & équipe -->
     <section id="quimper" class="solution-quimper">
         <h2 class="section-title">La Solution La Barket Quimper & Finistère</h2>
         <p class="section-subtitle">Un service de proximité pensé sur-mesure pour les entreprises locales</p>
         
-        <div class="quimper-container">
-            <h3>Ancrage Local & Finistérien</h3>
-            <p>Implantés au cœur de Quimper, nous intervenons rapidement sur toutes les zones d'activités (Créac'h Gwen, Gourvily, Pabu, etc.).</p>
-            <p>Nous collaborons étroitement avec des artisans et producteurs locaux pour garantir une cuisine authentique, saine, de saison et valorisant les circuits courts.</p>
+        <div class="quimper-grid">
+            <div class="quimper-box">
+                <h3>Ancrage Local & Finistérien</h3>
+                <p>Implantés au cœur de Quimper, nous intervenons rapidement sur toutes les zones d'activités (Créac'h Gwen, Gourvily, Pabu, etc.).</p>
+                <p>Nous collaborons étroitement avec des artisans et producteurs locaux pour garantir une cuisine authentique, saine et de saison.</p>
+            </div>
+            <div>
+                <!-- Votre photo d'équipe devant la boutique -->
+                <img src="https://lh3.googleusercontent.com/gg/AJWXcNdEmTLCI40PzT_IhKS6-kjBgnznJLcDOCuoC8MY7JkZ0nUKGiTi_NkibhBlpf4SeUeih-uJXA_Ti3GuLmjR2EpWdMWxLKpLwukgNBXvfiK4QLpNFvy5E1uPf7JkIDPsT_LBf-rKhEjTuvYWb3reznXlSu7XYTWKQnHs_UtqZbfVsVRTXtt5jZp7Elp_9MGVk6ZbaaL2l2l9wFT-LcM9WM8LJwwMiwuVbI2zxjAGASBXofA9CSPJcQxed7-I0OG4rGXO7J4Ym38dFNxFCq8-6vJkkNgCb96Eye4" alt="L'équipe La Barket devant la boutique de Quimper" class="img-featured">
+            </div>
         </div>
     </section>
 
-    <!-- Section Kiosque (Sans image gênante) -->
-    <section id="kiosque" style="background: #ffffff;">
+    <!-- Section Kiosque avec VOTRE VRAIE PHOTO des distributeurs -->
+    <section id="kiosque" class="kiosque-haute-capacite">
         <h2 class="section-title">Un Kiosque Haute Capacité Conçu pour la Restauration Fraîche</h2>
         <p class="section-subtitle">Une technologie moderne pour répondre aux besoins des petites comme des grandes équipes</p>
         
-        <div class="kiosque-container">
-            <h3>Performance & Technologie Ascenseur</h3>
-            <p style="margin-bottom: 25px; color: #555; text-align: center;">Notre distributeur intelligent garantit la conservation optimale de la chaîne du froid et la sécurité des emballages lors de la délivrance du repas.</p>
-            <ul class="specs-list">
-                <li><strong>Haute capacité :</strong> Stockage important pour servir tous vos collaborateurs sans rupture.</li>
-                <li><strong>Système ascenseur doux :</strong> Traitement délicat de chaque plat pour préserver la présentation.</li>
-                <li><strong>Gestion thermique intelligente :</strong> Maintien constant entre +2°C et +4°C.</li>
-                <li><strong>Paiement sans contact :</strong> Titres-restaurant, CB et smartphone acceptés en 3 secondes.</li>
-            </ul>
+        <div class="kiosque-grid">
+            <div>
+                <!-- Votre photo du distributeur -->
+                <img src="https://lh3.googleusercontent.com/gg/AJWXcNcsEOqMCpQB48M1D2PEZFrl8lLAmLDDQsSl7OWoYU2W3vyVRc12sb4_ellEgH758x-eIET-cngWAaX0xU_DS0xfFFiUfGmlRml3s5bO6AuQLCUFy2QPY9U_MONE6TQyIpwykGCzA-VViTRgj3F_hnatpVF0BeakNQY-3XWZCw6_Zy0muB2fziWfipgC0R-H8vsE4zslI0tUQZyeShJUzpO5sPseYJHEjHxlx2tzezj_488Zqtk4CbZ0cuzj-1mnSl_yd2CfyBD7DoSgQYDqDurbxgZY6HcL9dM" alt="Distributeurs Kiosques La Barket" class="img-featured">
+            </div>
+
+            <div class="kiosque-specs">
+                <h3>Performance & Technologie Ascenseur</h3>
+                <p style="margin-bottom: 20px; color: #555;">Notre distributeur intelligent garantit la conservation optimale de la chaîne du froid et la sécurité des emballages lors de la délivrance du repas.</p>
+                <ul class="specs-list">
+                    <li><strong>Haute capacité :</strong> Stockage important pour servir tous vos collaborateurs sans rupture.</li>
+                    <li><strong>Système ascenseur doux :</strong> Traitement délicat de chaque plat pour préserver la présentation.</li>
+                    <li><strong>Gestion thermique intelligente :</strong> Maintien constant entre +2°C et +4°C.</li>
+                    <li><strong>Paiement sans contact :</strong> Titres-restaurant, CB et smartphone acceptés en 3 secondes.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- Galerie de Plats et Desserts (vos photos de plats qui fonctionnent) -->
+    <!-- Galerie de Plats et Desserts avec VOS VRAIES PHOTOS -->
     <section id="cantine" style="background: var(--light-bg);">
         <h2 class="section-title">La Cantine Fraîche & Nos Recettes</h2>
         <p class="section-subtitle">Des plats cuisinés locaux à prix accessibles pour tous vos collaborateurs</p>
         
         <div class="dishes-gallery">
             <div class="dish-card">
-                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Salade Roquefort">
+                <img src="https://lh3.googleusercontent.com/gg/AJWXcNfgkuGLCGjL8PjmmritT-w4XxCMXBQqtvpLbDIi026cx8kgnISD13VisEMjeBQ88DPOCIqbHYR2I9Tslt_Dd1w5Ebemt7A6t3TzCsV8hZKwkXkK8yQbojaDfC4sdTZYixw6GS74yeafToQ4Bc2c9OvEw1cIkG1gjw2IxK2rxECPPtYeQxmuYh7j5-oINu5tIKqcU4RuR7pWxuq6G5FCM9_PzAdBUidv5UxYvbs4ZLisYPUJPklyhKSMIhMZL2G1AQfSelKs57LygViuog_ViXPvC9TkwDSlQCg" alt="Salade Roquefort">
                 <div class="dish-card-info">
                     <h4>Salade Roquefort & Raisins</h4>
                     <span>Entrée / Salade dès 3,90 €</span>
@@ -472,7 +508,7 @@
             </div>
 
             <div class="dish-card">
-                <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?auto=format&fit=crop&w=600&q=80" alt="Crème de cèpes et parmesan">
+                <img src="https://lh3.googleusercontent.com/gg/AJWXcNdR91uDTfJ0mXNvqRJgM_hpiA1IleIVlXHAT3g6xodneCfyn5H0zb8S5mJWbTbnVIMy841_gvkuMqbnyyskNYiNAPkvxxaamkYEGLSUXro7Y_zCjJOa4kN1euaBMqfXbUQCwcbElMYYn2fPZEZKDfLpG7mDkR_Y-iUKHYRMizRB1MSGBdb4dFfMpq4QF8GMg4yWCYgPsc1yigsiRx3jtY1kU6UMMUofIlh50mw7IIymZph5DJLanmJhUUElqzcef_u192jm5uCcTwqCJU-EKtikdl9i8laCpEI" alt="Crème de cèpes et parmesan">
                 <div class="dish-card-info">
                     <h4>Crème de Cèpes & Parmesan</h4>
                     <span>Plat chaud dès 6,90 €</span>
@@ -480,7 +516,7 @@
             </div>
 
             <div class="dish-card">
-                <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=600&q=80" alt="Poulet à l'espagnole">
+                <img src="https://lh3.googleusercontent.com/gg/AJWXcNedfsa3V5nPtUk0PCPOrDiT8KPJnXGptzaMdMJ6WPh4vSluY-t8cOr4hFlsEm8tT8gSo8nSNH-oc6xB_MkNmfsYczLpl_lckLbCWz8cmIyxAGVC4-jRZQO0QBJDbQzwRdgB1ghVD3Yie8ludkh8KQW_or-j-xncWghczApj0IPu5POCGzdXkuWVMt9RknXp_Wrby_kN5VbAcmmEVzf_C1E-2AGT6e8dgPmeGPFj2rvIhQ9bR8EMXbDzXAx7ltXWWfEV0lhRs6nJnhLmbOLZKJHd0gqKQ5L0saA" alt="Poulet à l'espagnole">
                 <div class="dish-card-info">
                     <h4>Poulet à l'Espagnole & Chorizo</h4>
                     <span>Plat chaud dès 6,90 €</span>
@@ -488,7 +524,7 @@
             </div>
 
             <div class="dish-card">
-                <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Moelleux au chocolat praliné">
+                <img src="https://lh3.googleusercontent.com/gg/AJWXcNfqVEZTj-2hrlsDjrBdUOLbbkAAYAKkKJJ9nJ597Fu0I6sRSRiGiyiXPEyCd2oKpFTP54n9rx8Rj6ADVbDpxVhH0XX0IOBvH-z7PPzJ9a4GOmD7WY7_WAgA84yZyXmkhQ0VEwKbiS9ycTqL_JMwvrtz8rhOPjOwq2GcL9Ih2bj1fUogzzG1lc2Vg9J24Jr2zt50aVBolVG5QFuuj1PAD0fOsViAZAgCDHMp9_PiGaAnjuTnZrTDpNg-siD9saEXwAAjvVxiBZAJKzzdxEK-gs8dYN4p5Ew73A" alt="Moelleux au chocolat praliné">
                 <div class="dish-card-info">
                     <h4>Moelleux Chocolat Praliné</h4>
                     <span>Dessert dès 2,50 €</span>
@@ -496,7 +532,7 @@
             </div>
 
             <div class="dish-card">
-                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Mousse à la figue de barbarie">
+                <img src="https://lh3.googleusercontent.com/gg/AJWXcNe3ZXg7FOFv8WMO808fvBfQqVmP728NQdzZzLAXDVavnlu4ps4c9zZdrQMYxpJ9IP2NdxoFzxfGEwvS_3ic61bsDfNPGYxRt3B_1pXU5tPGoAEBNYUbHXl-GZVOqbyaoPbdCH3EekHPnpo94-gVQmA8XBqkQnjMuPGHEXbhpHtE-kzFUgstuUtfPZxS-xFT2kc_Wyi-GAOmhKT-R4-qpuo-xlQM17ca_HOjL-IZ9nhT5TzDdw64c_QfiROzcu5C5_DDqMw7kfmSAUU4xMiRhhe7qqmyzk9HZg" alt="Mousse à la figue de barbarie">
                 <div class="dish-card-info">
                     <h4>Mousse Figue de Barbarie</h4>
                     <span>Dessert dès 2,50 €</span>
