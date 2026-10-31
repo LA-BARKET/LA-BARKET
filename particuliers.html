@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Barket - Plats Cuisinés & Vente aux Particuliers Quimper</title>
+    <style>
+        :root {
+            --primary: #1845AD;
+            --primary-light: #6A7EB8;
+            --primary-dark: #0D235C;
+            --accent: #E65100;
+            --light-bg: #F4F6FB;
+            --text: #2C3E50;
+            --whatsapp: #25D366;
+            --uber: #06C167;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(24, 69, 173, 0.12);
+            z-index: 1000;
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .back-b2b {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 1px solid var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .back-b2b:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 70px 5% 50px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #E8EEFF;
+        }
+
+        .order-channels {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .btn-channel {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: transform 0.2s;
+        }
+
+        .btn-channel:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp { background-color: var(--whatsapp); }
+        .btn-uber { background-color: var(--uber); }
+
+        section { padding: 60px 5%; }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--primary-light);
+            margin-bottom: 40px;
+            font-size: 1rem;
+        }
+
+        .dishes-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .dish-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e2e8f0;
+        }
+
+        .dish-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: contain;
+            background-color: #f8fafc;
+            padding: 10px;
+        }
+
+        .dish-card-info {
+            padding: 15px;
+            background: #ffffff;
+            margin-top: auto;
+        }
+
+        .dish-card-info h4 {
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .how-it-works {
+            background: var(--light-bg);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 35px 5%;
+        }
+
+        footer p {
+            color: var(--primary-light);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="La Barket Logo" class="logo-img">
+        </a>
+        <a href="index.html" class="back-b2b">🏢 Espace Entreprises (B2B)</a>
+    </header>
+
+    <section class="hero">
+        <h1>Vos Plats Cuisinés Frais à Quimper</h1>
+        <p>Recettes artisanales et locales préparées chaque jour. À emporter ou en livraison à domicile !</p>
+
+        <div class="order-channels">
+            <!-- Bouton WhatsApp Direct (Fonctionnel immédiatement) -->
+            <a href="https://wa.me/33600000000?text=Bonjour%20La%20Barket,%20je%20souhaite%20commander" class="btn-channel btn-whatsapp" target="_blank">
+                📱 Commander par WhatsApp
+            </a>
+
+            <!-- Bouton Uber Eats (À mettre à jour dès activation) -->
+            <a href="#uber-eats-bientot" class="btn-channel btn-uber">
+                🛵 Uber Eats (Bientôt disponible)
+            </a>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2 class="section-title">Comment Commander ?</h2>
+        <p class="section-subtitle">2 options simples pour savourer nos plats chez vous ou au bureau</p>
+
+        <div class="steps-grid">
+            <div class="step-box">
+                <div class="step-number">1</div>
+                <h3>Click & Collect / Direct</h3>
+                <p>Commandez via WhatsApp et venez récupérer votre repas directement à notre point de retrait.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-number">2</div>
+                <h3>Livraison Express</h3>
+                <p>Retrouvez-nous très bientôt sur l'application Uber Eats pour une livraison rapide sur Quimper.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="carte">
+        <h2 class="section-title">La Carte des Particuliers</h2>
+        <p class="section-subtitle">Découvrez nos plats et gourmandises du moment</p>
+
+        <div class="dishes-gallery">
+            <div class="dish-card">
+                <img src="Salade de roquefort.jpg" alt="Salade Roquefort">
+                <div class="dish-card-info">
+                    <h4>Salade Roquefort & Raisins</h4>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="Crème de ceps et parmesan.jpg" alt="Crème de cèpes et parmesan">
+                <div class="dish-card-info">
+                    <h4>Crème de Cèpes & Parmesan</h4>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="Poulet a l'espagnole.jpg" alt="Poulet à l'espagnole">
+                <div class="dish-card-info">
+                    <h4>Poulet à l'Espagnole & Chorizo</h4>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="lasagnes.png" alt="Lasagnes de légumes grillés">
+                <div class="dish-card-info">
+                    <h4>Lasagnes de Légumes Grillés</h4>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="Moelleux au chocolat.jpg" alt="Moelleux au chocolat praliné">
+                <div class="dish-card-info">
+                    <h4>Moelleux Chocolat Praliné</h4>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <img src="cookie.png" alt="Cookie noisette et chocolat">
+                <div class="dish-card-info">
+                    <h4>Cookie Noisette & Chocolat</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 La Barket - Vente aux particuliers Quimper. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
