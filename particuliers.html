@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Barket - Offres Particuliers</title>
+    <title>La Barket - Espace Particuliers</title>
     <style>
         /* Styles Généraux */
         body {
@@ -32,15 +32,37 @@
             opacity: 0.9;
         }
 
-        /* Section Contenu Existant (Photos d'origine préservées) */
-        .existing-content {
+        /* Barre de navigation / Retour Espace Entreprises */
+        .top-nav {
+            background-color: #0d235c;
+            padding: 10px 20px;
+            text-align: right;
+        }
+
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.2s;
+        }
+
+        .top-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Section Contenu & Photos d'origine */
+        .original-content {
             max-width: 1000px;
             margin: 30px auto 10px auto;
             padding: 0 20px;
             text-align: center;
         }
 
-        .existing-content img {
+        .original-content img {
             max-width: 100%;
             height: auto;
             border-radius: 12px;
@@ -152,26 +174,30 @@
 </head>
 <body>
 
+    <!-- Lien de retour vers l'Espace B2B / Entreprises -->
+    <div class="top-nav">
+        <a href="index.html">← Accéder à l'Espace Entreprises (B2B)</a>
+    </div>
+
     <header>
         <h1>La Barket - Espace Particuliers</h1>
         <p>Vos formules savoureuses à emporter ou en livraison à Quimper</p>
     </header>
 
     <main>
-        <!-- Emplacement réservé pour vos photos/éléments déjà présents sur la page -->
-        <div class="existing-content">
-            <!-- Si vous aviez d'autres images principales, remplacez ou complétez ici -->
-            <!-- Exemple : <img src="votre-image-existante.png" alt="La Barket Quimper"> -->
+        <!-- Vos photos et éléments d'origine de la page -->
+        <div class="original-content">
+            <!-- Insérez vos images d'origine ici si nécessaire, ex: <img src="votre-image.png" alt="La Barket"> -->
         </div>
 
         <!-- Section Offres & Promotions -->
         <section class="promos-container">
             
-            <!-- Offre du jour (Vidéo avec son et contrôles stricts) -->
+            <!-- Offre du jour (Vidéo avec son et contrôles) -->
             <div class="promo-card">
                 <h2>Offre du Jour</h2>
                 <div class="media-wrapper">
-                    <video controls preload="metadata" playsinline poster="offredujour.png">
+                    <video controls preload="auto" playsinline poster="offredujour.png">
                         <source src="offredujour.mp4" type="video/mp4">
                         Votre navigateur ne supporte pas la lecture de vidéos.
                     </video>
@@ -184,13 +210,11 @@
                 </div>
             </div>
 
-            <!-- Super Promo (Image avec lien direct de secours si besoin) -->
+            <!-- Super Promo (Image) -->
             <div class="promo-card">
                 <h2>Super Promo</h2>
                 <div class="media-wrapper">
-                    <a href="superpromo.png" target="_blank" title="Cliquez pour ouvrir l'image en grand">
-                        <img src="superpromo.png" alt="Super Promo La Barket" onerror="this.onerror=null; this.src='offredujour.png';">
-                    </a>
+                    <img src="superpromo.png" alt="Super Promo La Barket">
                 </div>
                 <p>Profitez de nos offres exceptionnelles et réductions du moment !</p>
                 <div class="btn-container">
