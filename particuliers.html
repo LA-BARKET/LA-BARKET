@@ -54,7 +54,7 @@
             background-color: rgba(255, 255, 255, 0.25);
         }
 
-        /* Section pour vos photos et bannières d'origine */
+        /* Section pour vos photos et bannières du début */
         .original-photos-container {
             max-width: 1000px;
             margin: 30px auto 10px auto;
@@ -102,24 +102,23 @@
             margin-bottom: 15px;
         }
 
-        /* Conteneur média : object-fit: contain pour ne jamais couper l'image */
+        /* Conteneur média : garantit que l'image s'affiche en entier sans être coupée */
         .media-wrapper {
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
-            background-color: #f0f0f0; /* Fond clair si l'image ne remplit pas tout */
+            background-color: #f8f9fa;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .media-wrapper img, 
-        .media-wrapper video {
+        .media-wrapper img {
             width: 100%;
             height: auto;
             max-height: 450px;
-            object-fit: contain; /* GARANTIT QUE L'IMAGE ENTIÈRE S'AFFICHE SANS ÊTRE COUPÉE */
+            object-fit: contain;
             display: block;
         }
 
@@ -130,7 +129,7 @@
             margin-bottom: 20px;
         }
 
-        /* Boutons de commande (WhatsApp et Uber Eats) */
+        /* Boutons de commande */
         .btn-container {
             display: flex;
             flex-direction: column;
@@ -188,24 +187,22 @@
     </header>
 
     <main>
-        <!-- Vos photos d'origine -->
+        <!-- Vos photos d'origine du début de la page -->
         <div class="original-photos-container">
-            <!-- Insérez vos images d'origine ici si besoin -->
+            <!-- Si vous avez plusieurs photos d'origine, vous pouvez les ajouter ici en dupliquant la ligne <img src="..." alt="..."> -->
+            <!-- Exemple : <img src="nom-de-votre-premiere-photo.png" alt="La Barket"> -->
         </div>
 
         <!-- Section Offres & Promos -->
         <div class="promos-container">
             
-            <!-- Offre du jour : Vidéo avec lecteur standard pour qu'elle se lance correctement -->
+            <!-- Offre du jour : Remplacée par la photo (groupe de petites photos) en entier -->
             <div class="promo-card">
                 <h2>Offre du Jour</h2>
                 <div class="media-wrapper">
-                    <video controls preload="auto" playsinline style="width:150%; max-height:400px; background:#000;">
-                        <source src="offredujour.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la lecture de vidéos.
-                    </video>
+                    <img src="offredujour.png" alt="Offre du Jour La Barket">
                 </div>
-                <p>Découvrez notre présentation et notre spécialité du jour en vidéo !</p>
+                <p>Découvrez notre spécialité du jour fraîchement préparée !</p>
                 <div class="btn-container">
                     <a href="https://wa.me/33600000000?text=Bonjour%20La%20Barket,%20je%20souhaite%20commander%20l'Offre%20du%20Jour" class="btn-channel btn-whatsapp" target="_blank">
                         Commander via WhatsApp
@@ -216,7 +213,7 @@
                 </div>
             </div>
 
-            <!-- Super Promo : Image entière (non coupée) -->
+            <!-- Super Promo : Image entière -->
             <div class="promo-card">
                 <h2>Super Promo</h2>
                 <div class="media-wrapper">
