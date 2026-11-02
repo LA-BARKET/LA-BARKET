@@ -54,10 +54,10 @@
             background-color: rgba(255, 255, 255, 0.25);
         }
 
-        /* Section pour vos photos et bannières du début */
+        /* Section pour toutes vos photos de plats */
         .original-photos-container {
-            max-width: 1000px;
-            margin: 30px auto 10px auto;
+            max-width: 800px;
+            margin: 30px auto;
             padding: 0 20px;
             text-align: center;
         }
@@ -66,8 +66,12 @@
             max-width: 100%;
             height: auto;
             border-radius: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            object-fit: contain;
         }
 
         /* Section Offres & Promos */
@@ -102,12 +106,12 @@
             margin-bottom: 15px;
         }
 
-        /* Conteneur média : garantit que l'image s'affiche en entier sans être coupée */
+        /* Conteneur média pour afficher les images entières sans coupe */
         .media-wrapper {
             width: 100%;
             border-radius: 12px;
             overflow: hidden;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -117,7 +121,6 @@
         .media-wrapper img {
             width: 100%;
             height: auto;
-            max-height: 450px;
             object-fit: contain;
             display: block;
         }
@@ -187,16 +190,26 @@
     </header>
 
     <main>
-        <!-- Vos photos d'origine du début de la page -->
+        <!-- Photos des plats avec les liens directs bruts -->
         <div class="original-photos-container">
-            <!-- Si vous avez plusieurs photos d'origine, vous pouvez les ajouter ici en dupliquant la ligne <img src="..." alt="..."> -->
-            <!-- Exemple : <img src="nom-de-votre-premiere-photo.png" alt="La Barket"> -->
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Cr%C3%A8me%20de%20c%C3%A8pes%20et%20parmesan.jpg" alt="Crème de cèpes et parmesan">
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Kiosque.png" alt="Kiosque La Barket">
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/L'%C3%A9quipe.jpg" alt="L'équipe La Barket">
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Moelleux%20au%20chocolat.jpg" alt="Moelleux au chocolat">
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Mousse%20%C3%A0%20la%20figue%20de%20barbarie.jpg" alt="Mousse à la figue de barbarie">
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Poulet%20%C3%A0%20l'espagnole.jpg" alt="Poulet à l'espagnole">
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Salade%20de%20poulet%20marin%C3%A9%20au%20curry%20et%20citronnelle.png" alt="Salade de poulet mariné au curry et citronnelle">
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Salade%20de%20roquefort.jpg" alt="Salade de roquefort">
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/cheesecake.png" alt="Cheesecake">
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/cookie.png" alt="Cookie">
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/lasagnes.png" alt="Lasagnes">
+            <img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/logo.png" alt="Logo La Barket">
         </div>
 
         <!-- Section Offres & Promos -->
         <div class="promos-container">
             
-            <!-- Offre du jour : Remplacée par la photo (groupe de petites photos) en entier -->
+            <!-- Offre du jour -->
             <div class="promo-card">
                 <h2>Offre du Jour</h2>
                 <div class="media-wrapper">
@@ -213,7 +226,7 @@
                 </div>
             </div>
 
-            <!-- Super Promo : Image entière -->
+            <!-- Super Promo -->
             <div class="promo-card">
                 <h2>Super Promo</h2>
                 <div class="media-wrapper">
