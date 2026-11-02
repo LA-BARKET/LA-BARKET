@@ -64,15 +64,29 @@
         .top-nav a:hover {
             background-color: rgba(255, 255, 255, 0.25);
         }
+
+        /* Conteneur pour L'équipe et Le Kiosque (l'un en dessous de l'autre) */
+        .stacked-photos-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        /* Grille des recettes (côte à côte sur PC) */
         .original-photos-container {
             max-width: 1200px;
-            margin: 40px auto;
+            margin: 20px auto 40px auto;
             padding: 0 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
             justify-content: center;
         }
+
         .photo-card {
             background: #ffffff;
             border-radius: 16px;
@@ -84,7 +98,8 @@
             padding: 15px;
             box-sizing: border-box;
         }
-        .original-photos-container img {
+
+        .photo-card img {
             width: 100%;
             height: auto;
             max-height: 350px;
@@ -92,6 +107,7 @@
             object-fit: contain;
             display: block;
         }
+
         .promos-container {
             display: flex;
             flex-wrap: wrap;
@@ -193,26 +209,30 @@
         <div class="music-player">
             <span>🎵 Ambiance La Barket :</span>
             <audio controls loop>
-                <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=funky-disco-112343.mp3" type="audio/mpeg">
+                <source src="https://cdn.pixabay.com/download/audio/2022/10/14/audio_9939f792cb.mp3?filename=bright-summer-128714.mp3" type="audio/mpeg">
                 Votre navigateur ne supporte pas le lecteur audio.
             </audio>
         </div>
     </header>
 
     <main>
+        <!-- L'équipe et Le Kiosque l'un en dessous de l'autre -->
+        <div class="stacked-photos-container">
+            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/main/L'%C3%A9quipe.jpg" alt="L'équipe La Barket"></div>
+            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/main/Kiosque.png" alt="Kiosque La Barket"></div>
+        </div>
+
+        <!-- Les recettes côte à côte en grille -->
         <div class="original-photos-container">
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/L'%C3%A9quipe.jpg" alt="L'équipe La Barket"></div>
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Kiosque.png" alt="Kiosque La Barket"></div>
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Cr%C3%A8me%20de%20c%C3%A8pes%20et%20parmesan.jpg" alt="Crème de cèpes et parmesan"></div>
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Salade%20de%20poulet%20marin%C3%A9%20au%20curry%20et%20citronnelle.png" alt="Salade de poulet mariné au curry et citronnelle"></div>
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Poulet%20%C3%A0%20l'espagnole.jpg" alt="Poulet à l'espagnole"></div>
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Salade%20de%20roquefort.jpg" alt="Salade de roquefort"></div>
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/lasagnes.png" alt="Lasagnes"></div>
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Moelleux%20au%20chocolat.jpg" alt="Moelleux au chocolat"></div>
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/Mousse%20%C3%A0%20la%20figue%20de%20barbarie.jpg" alt="Mousse à la figue de barbarie"></div>
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/cheesecake.png" alt="Cheesecake"></div>
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/cookie.png" alt="Cookie"></div>
-            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/4130f87efc672b82a64c0cccddac1d50a76c1650/logo.png" alt="Logo La Barket"></div>
+            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/main/Cr%C3%A8me%20de%20c%C3%A8pes%20et%20parmesan.jpg" alt="Crème de cèpes et parmesan"></div>
+            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/main/Salade%20de%20poulet%20marin%C3%A9%20au%20curry%20et%20citronnelle.png" alt="Salade de poulet mariné au curry et citronnelle"></div>
+            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/main/Poulet%20%C3%A0%20l'espagnole.jpg" alt="Poulet à l'espagnole"></div>
+            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/main/Salade%20de%20roquefort.jpg" alt="Salade de roquefort"></div>
+            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/main/lasagnes.png" alt="Lasagnes"></div>
+            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/main/Moelleux%20au%20chocolat.jpg" alt="Moelleux au chocolat"></div>
+            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/main/Mousse%20%C3%A0%20la%20figue%20de%20barbarie.jpg" alt="Mousse à la figue de barbarie"></div>
+            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/main/cheesecake.png" alt="Cheesecake"></div>
+            <div class="photo-card"><img src="https://raw.githubusercontent.com/LA-BARKET/LA-BARKET/main/cookie.png" alt="Cookie"></div>
         </div>
 
         <div class="promos-container">
