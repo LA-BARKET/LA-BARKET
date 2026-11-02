@@ -32,6 +32,22 @@
             opacity: 0.9;
         }
 
+        /* Section Contenu Existant (Photos d'origine préservées) */
+        .existing-content {
+            max-width: 1000px;
+            margin: 30px auto 10px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .existing-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
         /* Section Offres & Promos */
         .promos-container {
             display: flex;
@@ -39,7 +55,7 @@
             gap: 25px;
             justify-content: center;
             max-width: 1000px;
-            margin: 40px auto;
+            margin: 20px auto 40px auto;
             padding: 0 20px;
         }
 
@@ -142,14 +158,20 @@
     </header>
 
     <main>
+        <!-- Emplacement réservé pour vos photos/éléments déjà présents sur la page -->
+        <div class="existing-content">
+            <!-- Si vous aviez d'autres images principales, remplacez ou complétez ici -->
+            <!-- Exemple : <img src="votre-image-existante.png" alt="La Barket Quimper"> -->
+        </div>
+
         <!-- Section Offres & Promotions -->
         <section class="promos-container">
             
-            <!-- Offre du jour (Vidéo avec son et contrôles) -->
+            <!-- Offre du jour (Vidéo avec son et contrôles stricts) -->
             <div class="promo-card">
                 <h2>Offre du Jour</h2>
                 <div class="media-wrapper">
-                    <video controls playsinline poster="offredujour.png">
+                    <video controls preload="metadata" playsinline poster="offredujour.png">
                         <source src="offredujour.mp4" type="video/mp4">
                         Votre navigateur ne supporte pas la lecture de vidéos.
                     </video>
@@ -162,11 +184,13 @@
                 </div>
             </div>
 
-            <!-- Super Promo (Image) -->
+            <!-- Super Promo (Image avec lien direct de secours si besoin) -->
             <div class="promo-card">
                 <h2>Super Promo</h2>
                 <div class="media-wrapper">
-                    <img src="superpromo.png" alt="Super Promo La Barket">
+                    <a href="superpromo.png" target="_blank" title="Cliquez pour ouvrir l'image en grand">
+                        <img src="superpromo.png" alt="Super Promo La Barket" onerror="this.onerror=null; this.src='offredujour.png';">
+                    </a>
                 </div>
                 <p>Profitez de nos offres exceptionnelles et réductions du moment !</p>
                 <div class="btn-container">
