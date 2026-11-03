@@ -104,7 +104,7 @@
         /* Style des boutons de filtre */
         .filter-container {
             text-align: center;
-            margin: 30px 0 10px 0;
+            margin: 30px 0 15px 0;
             display: flex;
             justify-content: center;
             gap: 12px;
@@ -126,6 +126,24 @@
             background-color: #1845AD;
             color: white;
             box-shadow: 0 4px 12px rgba(24, 69, 173, 0.3);
+        }
+        /* Style du bandeau Fait Maison */
+        .homemade-banner {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #1845AD, #0d235c);
+            color: white;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(24, 69, 173, 0.2);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
         .original-photos-container {
             max-width: 1200px;
@@ -260,6 +278,11 @@
             <button class="filter-btn" onclick="filterRecettes('dessert')">🍰 Nos Desserts</button>
         </div>
 
+        <!-- Bandeau Fait Maison -->
+        <div class="homemade-banner">
+            👨‍🍳 Tous nos plats et tous nos desserts sont FAIT MAISON par nos chefs 👨‍🍳
+        </div>
+
         <!-- Grille des recettes classées par catégorie -->
         <div class="original-photos-container" id="recettes-grid">
             <!-- Plats -->
@@ -272,7 +295,7 @@
             <div class="photo-card" data-category="plat"><img src="saumon.png" alt="Recette Saumon"></div>
             <div class="photo-card" data-category="plat"><img src="saute.png" alt="Recette Sauté"></div>
 
-            <!-- Desserts (avec power.png et mangue.png) -->
+            <!-- Desserts -->
             <div class="photo-card" data-category="dessert"><img src="moelleux.jpg" alt="Moelleux au chocolat"></div>
             <div class="photo-card" data-category="dessert"><img src="mousse.jpg" alt="Mousse à la figue de barbarie"></div>
             <div class="photo-card" data-category="dessert"><img src="cheesecake.png" alt="Cheesecake"></div>
