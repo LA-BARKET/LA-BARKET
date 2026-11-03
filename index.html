@@ -100,7 +100,7 @@
             line-height: 1.5;
         }
 
-        /* SIMULATEUR B2B (Salariés, Temps économisé, Économies à l'année) */
+        /* SIMULATEUR B2B (Salariés & Temps économisé en heures) */
         .simulator-card {
             background: linear-gradient(135deg, #ffffff, #f0f4ff);
             border: 2px solid #1845AD;
@@ -413,8 +413,8 @@
             
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>🎯 0€ d'investissement</h3>
-                    <p>Service 100% gratuit pour l'employeur. L'installation, la maintenance et la gestion sont intégralement prises en charge.</p>
+                    <h3>🎯 0€ d'investissement & Aucune charge</h3>
+                    <p>Service 100% gratuit et sans aucune charge pour l'employeur. L'installation, la maintenance et la gestion sont intégralement prises en charge.</p>
                 </div>
                 <div class="feature-card">
                     <h3>🥗 Fait Maison & Local</h3>
@@ -427,10 +427,10 @@
             </div>
         </div>
 
-        <!-- SIMULATEUR B2B (Salariés, Temps économisé, Économies à l'année) -->
+        <!-- SIMULATEUR B2B (Salariés & Temps économisé en heures) -->
         <div class="simulator-card">
-            <h2>📊 Simulateur d'Impact & Gains Entreprise</h2>
-            <p>Estimez le nombre de salariés concernés, le temps précieux économisé chaque jour et les économies réalisées à l'année.</p>
+            <h2>📊 Simulateur de Gains de Temps</h2>
+            <p>Estimez le nombre de salariés concernés ainsi que le temps précieux économisé chaque jour et sur l'année.</p>
             
             <div class="simulator-form">
                 <div class="sim-group">
@@ -438,8 +438,8 @@
                     <input type="number" id="effectif" value="35" min="5" max="1000" oninput="calculerSimulateur()">
                 </div>
                 <div class="sim-group">
-                    <label for="repas-jour">Repas pris / jour / sal. :</label>
-                    <input type="number" id="repas-jour" value="1" min="1" max="3" oninput="calculerSimulateur()">
+                    <label for="temps-pause">Temps économisé / repas :</label>
+                    <input type="number" id="temps-pause" value="20" min="5" max="60" oninput="calculerSimulateur()">
                 </div>
             </div>
 
@@ -449,12 +449,12 @@
                     <span class="lbl">Salariés bénéficiaires</span>
                 </div>
                 <div class="sim-result-box">
-                    <span class="val" id="res-temps">~140 h</span>
-                    <span class="lbl">Temps économisé / an / sal.</span>
+                    <span class="val" id="res-temps-jour">12 h 30 min</span>
+                    <span class="lbl">Temps économisé / jour (total)</span>
                 </div>
                 <div class="sim-result-box">
-                    <span class="val" id="res-economie-an">~11 900 €</span>
-                    <span class="lbl">Économies globales à l'année</span>
+                    <span class="val" id="res-temps-an">2 625 heures</span>
+                    <span class="lbl">Temps économisé à l'année</span>
                 </div>
             </div>
         </div>
@@ -466,6 +466,8 @@
                 <div class="b2b-col">
                     <h3>🤝 Ce que La Barket apporte à votre structure</h3>
                     <ul>
+                        <li><strong>Aucune installation complexe pour l'entreprise :</strong> Mise en place simple, rapide et sans lourds travaux dans vos locaux.</li>
+                        <li><strong>Aucune charge pour l'employeur :</strong> Le service est entièrement autonome et sans impact sur votre budget de fonctionnement.</li>
                         <li><strong>Équité pour toutes les équipes :</strong> Vos collaborateurs en horaires décalés ou de nuit bénéficient enfin de la même qualité de repas frais que le personnel de journée.</li>
                         <li><strong>Un levier de marque employeur :</strong> Améliorez le bien-être au travail, la cohésion d'équipe et l'attractivité de votre entreprise.</li>
                         <li><strong>Simplicité & Zéro gestion interne :</strong> Nous gérons la totalité du réassort quotidien, de l'entretien et du suivi qualité.</li>
@@ -578,19 +580,22 @@
             });
         }
 
-        // Logique du simulateur (Salariés, Temps économisé, Économies à l'année)
+        // Logique du simulateur de temps gagné
         function calculerSimulateur() {
             const effectif = parseInt(document.getElementById('effectif').value) || 0;
+            const minutesGagneesParRepas = parseInt(document.getElementById('temps-pause').value) || 0;
             
-            // Calculs basés sur les critères demandés
-            const tempsEconomiseParAnParSalarie = 140; // env. 40 min par jour sur 210 jours ouvrés
-            const economieAnnuelleParSalarie = 340; // gain estimé sur le budget repas
-
-            const economieGlobaleAn = effectif * economieAnnuelleParSalarie;
+            const joursOuvresAn = 210;
+            const totalMinutesJour = effectif * minutesGagneesParRepas;
+            
+            const heuresJour = Math.floor(totalMinutesJour / 60);
+            const minsJour = totalMinutesJour % 60;
+            
+            const totalHeuresAn = Math.round((totalMinutesJour * joursOuvresAn) / 60);
 
             document.getElementById('res-salaries').innerText = effectif;
-            document.getElementById('res-temps').innerText = "~" + tempsEconomiseParAnParSalarie + " h";
-            document.getElementById('res-economie-an').innerText = "~" + economieGlobaleAn.toLocaleString('fr-FR') + " €";
+            document.getElementById('res-temps-jour').innerText = heuresJour + " h " + (minsJour > 0 ? minsJour + " min" : "");
+            document.getElementById('res-temps-an').innerText = totalHeuresAn.toLocaleString('fr-FR') + " heures";
         }
 
         window.onload = function() {
@@ -600,4 +605,3 @@
 
 </body>
 </html>
-
