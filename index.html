@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -101,7 +100,7 @@
             line-height: 1.5;
         }
 
-        /* SIMULATEUR INTERACTIF B2B */
+        /* SIMULATEUR B2B (Salariés, Temps économisé, Économies à l'année) */
         .simulator-card {
             background: linear-gradient(135deg, #ffffff, #f0f4ff);
             border: 2px solid #1845AD;
@@ -141,7 +140,7 @@
             font-weight: bold;
             color: #333;
         }
-        .sim-group input, .sim-group select {
+        .sim-group input {
             padding: 10px 15px;
             border-radius: 8px;
             border: 1px solid #ccc;
@@ -154,7 +153,7 @@
             color: white;
             border-radius: 12px;
             padding: 20px;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
             display: flex;
             justify-content: space-around;
@@ -428,42 +427,34 @@
             </div>
         </div>
 
-        <!-- SIMULATEUR D'ÉCONOMIES RH & SALARIÉS -->
+        <!-- SIMULATEUR B2B (Salariés, Temps économisé, Économies à l'année) -->
         <div class="simulator-card">
-            <h2>📊 Simulateur de Gains & Pouvoir d'Achat</h2>
-            <p>Calculez en temps réel les économies générées pour vos collaborateurs et le gain de temps pour vos équipes grâce au kiosque La Barket.</p>
+            <h2>📊 Simulateur d'Impact & Gains Entreprise</h2>
+            <p>Estimez le nombre de salariés concernés, le temps précieux économisé chaque jour et les économies réalisées à l'année.</p>
             
             <div class="simulator-form">
                 <div class="sim-group">
                     <label for="effectif">Nombre de salariés :</label>
-                    <input type="number" id="effectif" value="35" min="5" max="500" oninput="calculerSimulateur()">
+                    <input type="number" id="effectif" value="35" min="5" max="1000" oninput="calculerSimulateur()">
                 </div>
                 <div class="sim-group">
-                    <label for="frequentation">Fréquentation estimée :</label>
-                    <select id="frequentation" onchange="calculerSimulateur()">
-                        <option value="0.3">30% de l'effectif / jour</option>
-                        <option value="0.5" selected>50% de l'effectif / jour</option>
-                        <option value="0.7">70% de l'effectif / jour</option>
-                    </select>
-                </div>
-                <div class="sim-group">
-                    <label for="prix_externe">Budget repas ext. moyen :</label>
-                    <input type="number" id="prix_externe" value="13" min="8" max="25" oninput="calculerSimulateur()">
+                    <label for="repas-jour">Repas pris / jour / sal. :</label>
+                    <input type="number" id="repas-jour" value="1" min="1" max="3" oninput="calculerSimulateur()">
                 </div>
             </div>
 
             <div class="sim-result">
                 <div class="sim-result-box">
-                    <span class="val" id="gain-salarie">~95 €</span>
-                    <span class="lbl">Économie mensuelle par salarié</span>
+                    <span class="val" id="res-salaries">35</span>
+                    <span class="lbl">Salariés bénéficiaires</span>
                 </div>
                 <div class="sim-result-box">
-                    <span class="val" id="gain-global">~1 660 €</span>
-                    <span class="lbl">Pouvoir d'achat global réinjecté / mois</span>
+                    <span class="val" id="res-temps">~140 h</span>
+                    <span class="lbl">Temps économisé / an / sal.</span>
                 </div>
                 <div class="sim-result-box">
-                    <span class="val" id="temps-gagne">15 min</span>
-                    <span class="lbl">Temps de pause optimisé / jour</span>
+                    <span class="val" id="res-economie-an">~11 900 €</span>
+                    <span class="lbl">Économies globales à l'année</span>
                 </div>
             </div>
         </div>
@@ -587,26 +578,21 @@
             });
         }
 
-        // Logique du simulateur interactif
+        // Logique du simulateur (Salariés, Temps économisé, Économies à l'année)
         function calculerSimulateur() {
-            const effectif = parseFloat(document.getElementById('effectif').value) || 0;
-            const freq = parseFloat(document.getElementById('frequentation').value) || 0.5;
-            const prixExt = parseFloat(document.getElementById('prix_externe').value) || 13;
-
-            const prixBarketMoyen = 8.5; // Prix moyen plat + dessert La Barket
-            const joursOuvresMois = 20;
-
-            const economieParRepas = Math.max(0, prixExt - prixBarketMoyen);
-            const repasParMoisParSalarie = joursOuvresMois * freq;
+            const effectif = parseInt(document.getElementById('effectif').value) || 0;
             
-            const gainMensuelSalarie = Math.round(economieParRepas * repasParMoisParSalarie);
-            const gainGlobalEntreprise = Math.round(gainMensuelSalarie * effectif);
+            // Calculs basés sur les critères demandés
+            const tempsEconomiseParAnParSalarie = 140; // env. 40 min par jour sur 210 jours ouvrés
+            const economieAnnuelleParSalarie = 340; // gain estimé sur le budget repas
 
-            document.getElementById('gain-salarie').innerText = "~" + gainMensuelSalarie + " €";
-            document.getElementById('gain-global').innerText = "~" + gainGlobalEntreprise.toLocaleString('fr-FR') + " €";
+            const economieGlobaleAn = effectif * economieAnnuelleParSalarie;
+
+            document.getElementById('res-salaries').innerText = effectif;
+            document.getElementById('res-temps').innerText = "~" + tempsEconomiseParAnParSalarie + " h";
+            document.getElementById('res-economie-an').innerText = "~" + economieGlobaleAn.toLocaleString('fr-FR') + " €";
         }
 
-        // Calcul initial au chargement
         window.onload = function() {
             calculerSimulateur();
         };
