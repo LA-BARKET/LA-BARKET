@@ -3,637 +3,355 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Barket - Solutions Repas & Kiosque Connecté B2B Quimper</title>
+    <title>La Barket - Espace Entreprises (B2B)</title>
     <style>
-        :root {
-            --primary: #1845AD;
-            --primary-light: #6A7EB8;
-            --primary-dark: #0D235C;
-            --accent: #E65100;
-            --light-bg: #F4F6FB;
-            --text: #2C3E50;
-        }
-
-        * {
-            box-sizing: border-box;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
         }
-
-        body {
-            color: var(--text);
-            line-height: 1.6;
-            background-color: #ffffff;
-        }
-
         header {
-            position: sticky;
-            top: 0;
-            background: #ffffff;
-            box-shadow: 0 2px 10px rgba(24, 69, 173, 0.12);
-            z-index: 1000;
-            padding: 12px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            height: 55px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 18px;
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--primary);
-            font-weight: 600;
-            transition: color 0.3s;
-            font-size: 0.9rem;
-        }
-
-        nav a:hover {
-            color: var(--primary-light);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background-color: #1845AD;
             color: white;
-            padding: 90px 5% 70px;
             text-align: center;
+            padding: 2rem 1rem 1.5rem 1rem;
         }
-
-        .hero h1 {
-            font-size: 2.6rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            opacity: 0.95;
-            color: #E8EEFF;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.2s, background 0.2s;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(230, 81, 0, 0.3);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            background: #d84315;
-        }
-
-        section {
-            padding: 70px 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 15px;
+        header h1 {
+            margin: 0;
             font-size: 2.2rem;
         }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--primary-light);
-            margin-bottom: 50px;
+        header p {
+            margin-top: 0.5rem;
             font-size: 1.1rem;
-            font-weight: 500;
+            opacity: 0.9;
         }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+        .music-player {
+            background-color: rgba(255, 255, 255, 0.15);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            border-radius: 25px;
+            margin-top: 15px;
+            backdrop-filter: blur(5px);
         }
-
-        .card {
-            background: var(--light-bg);
-            padding: 35px;
-            border-radius: 12px;
-            border-top: 4px solid var(--primary);
-            box-shadow: 0 4px 10px rgba(24, 69, 173, 0.05);
-            transition: transform 0.3s;
+        .music-player span {
+            font-size: 0.9rem;
+            font-weight: 600;
         }
-
-        .card:hover {
-            transform: translateY(-5px);
+        .music-player audio {
+            height: 30px;
+            border-radius: 15px;
+            outline: none;
         }
-
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+        .top-nav {
+            background-color: #0d235c;
+            padding: 10px 20px;
+            text-align: right;
         }
-
-        .card p {
-            color: #555;
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
             font-size: 0.95rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.2s;
         }
-
-        .solution-quimper {
-            background: var(--light-bg);
+        .top-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.25);
         }
-
-        .quimper-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        .stacked-photos-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
             align-items: center;
         }
-
-        .quimper-box {
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(24, 69, 173, 0.06);
-            border-left: 5px solid var(--primary);
+        .photo-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            box-sizing: border-box;
+            width: 100%;
         }
-
-        .quimper-box h3 {
-            color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .quimper-box p {
-            color: #555;
-            margin-bottom: 12px;
-        }
-
-        .img-featured {
+        .photo-card img {
             width: 100%;
             height: auto;
-            max-height: 400px;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-            object-fit: contain;
-            background-color: #f8fafc;
-        }
-
-        .kiosque-haute-capacite {
-            background: #ffffff;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .kiosque-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .kiosque-specs {
-            background: var(--light-bg);
-            border-left: 5px solid var(--primary);
-            padding: 30px;
+            max-height: 350px;
             border-radius: 10px;
+            object-fit: contain;
+            display: block;
         }
-
-        .kiosque-specs h3 {
-            color: var(--primary);
-            font-size: 1.6rem;
+        .address-caption {
+            margin-top: 12px;
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.5;
+        }
+        /* Style des boutons de filtre */
+        .filter-container {
+            text-align: center;
+            margin: 30px 0 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+        .filter-btn {
+            background-color: #e9ecef;
+            border: none;
+            color: #333;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #1845AD;
+            color: white;
+            box-shadow: 0 4px 12px rgba(24, 69, 173, 0.3);
+        }
+        /* Style du bandeau Fait Maison */
+        .homemade-banner {
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #1845AD, #0d235c);
+            color: white;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(24, 69, 173, 0.2);
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .original-photos-container {
+            max-width: 1200px;
+            margin: 20px auto 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            justify-content: center;
+        }
+        .promos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            max-width: 1000px;
+            margin: 20px auto 40px auto;
+            padding: 0 20px;
+        }
+        .promo-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 440px;
+            padding: 24px;
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .promo-card h2 {
+            color: #1845AD;
+            font-size: 1.5rem;
+            margin-top: 0;
             margin-bottom: 15px;
         }
-
-        .specs-list {
-            list-style: none;
+        .media-wrapper {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #ffffff;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .media-wrapper img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+        .promo-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .btn-container {
             display: flex;
             flex-direction: column;
             gap: 12px;
+            margin-top: 15px;
         }
-
-        .specs-list li {
-            position: relative;
-            padding-left: 28px;
-            color: #333;
-        }
-
-        .specs-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
+        .btn-channel {
+            display: inline-block;
+            padding: 14px 20px;
+            border-radius: 30px;
+            text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .dishes-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 40px auto 0;
-        }
-
-        .dish-card {
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            font-size: 1rem;
             text-align: center;
-            transition: transform 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .dish-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .dish-card img {
-            width: 100%;
-            height: auto;
-            max-height: 280px;
-            object-fit: contain;
-            background-color: #f8fafc;
-            padding: 10px;
-        }
-
-        .dish-card-info {
-            padding: 15px;
-            background: #ffffff;
-            margin-top: auto;
-        }
-
-        .dish-card-info h4 {
-            color: var(--primary);
-            font-size: 1rem;
-        }
-
-        .simulator-section {
-            background: var(--light-bg);
-        }
-
-        .simulator-box {
-            background: #ffffff;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(24, 69, 173, 0.08);
-            border-top: 4px solid var(--primary);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: var(--primary-dark);
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-
-        .result-box {
-            margin-top: 30px;
-            padding: 25px;
-            background: #e8f5e9;
-            border-radius: 10px;
-            color: #1b5e20;
-            font-size: 1.1rem;
-            text-align: center;
-            display: none;
-            border: 1px solid #a5d6a7;
-        }
-
-        .contact-section {
-            background: #ffffff;
-        }
-
-        .contact-form {
-            max-width: 650px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-form input, .contact-form textarea {
-            padding: 14px;
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            width: 100%;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .contact-form input:focus, .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(24, 69, 173, 0.15);
-        }
-
-        footer {
-            background: var(--primary-dark);
             color: white;
+            cursor: default;
+            pointer-events: none;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        .btn-ubereats {
+            background-color: #06C167;
+        }
+        footer {
             text-align: center;
-            padding: 40px 5%;
-        }
-
-        footer .logo-img {
-            height: 45px;
-            margin-bottom: 20px;
-        }
-
-        footer p {
-            color: var(--primary-light);
+            padding: 20px;
+            color: #777;
             font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-                padding: 15px;
-            }
-            nav ul {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .quimper-grid, .kiosque-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <div class="top-nav">
+        <a href="particuliers.html">← Accéder à l'Espace Particuliers</a>
+    </div>
+
     <header>
-        <a href="#" class="logo-container">
-            <img src="logo.png" alt="La Barket Logo" class="logo-img">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#concept">Concept</a></li>
-                <li><a href="#quimper">La Solution Quimper</a></li>
-                <li><a href="#kiosque">Kiosque & Frigo</a></li>
-                <li><a href="#cantine">Cantine & Plats</a></li>
-                <li><a href="#offres">Offre 0€</a></li>
-                <li><a href="#simulateur">Simulateur</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>La Barket - Espace Entreprises (B2B)</h1>
+        <p>Solutions de plateaux repas et livraisons pour vos équipes à Quimper</p>
+        
+        <div class="music-player">
+            <span>🎵 Ambiance La Barket :</span>
+            <audio controls loop preload="auto">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas le lecteur audio.
+            </audio>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>La Pause Déjeuner B2B Nouvelle Génération à Quimper</h1>
-        <p>Proposez à vos salariés des repas frais, locaux et gourmands directement dans votre entreprise. Une solution clé en main, moderne et 100% zéro coût pour l'employeur.</p>
-        <a href="#contact" class="btn">Implanter un kiosque La Barket</a>
-    </section>
-
-    <!-- Concept Section -->
-    <section id="concept">
-        <h2 class="section-title">Pourquoi Choisir La Barket ?</h2>
-        <p class="section-subtitle">Dynamisez la pause déjeuner au sein de vos locaux dans le Finistère (Créac'h Gwen, Gourvily...)</p>
-        <div class="cards-grid">
-            <div class="card">
-                <h3>🥗 Fraîcheur & Qualité Locale</h3>
-                <p>Des recettes équilibrées et savoureuses préparées avec soin, valorisant les producteurs et circuits courts de la région bretonne.</p>
+    <main>
+        <!-- L'équipe avec l'adresse, les horaires et Le Kiosque -->
+        <div class="stacked-photos-container">
+            <div class="photo-card">
+                <img src="equipe.jpg" alt="L'équipe La Barket">
+                <div class="address-caption">
+                    📍 49 Boulevard Amiral de Kerguélen, Quimper<br>
+                    🕒 Ouvert de 10H à 22H
+                </div>
             </div>
-            <div class="card">
-                <h3>🕒 Disponibilité 24/7</h3>
-                <p>Fini les contraintes de livraison ou les files d'attente à l'extérieur. Vos équipes se nourrissent quand elles le souhaitent, selon leur rythme.</p>
-            </div>
-            <div class="card">
-                <h3>🤝 Engagement QVT & RSE</h3>
-                <p>Améliorez concrètement la Qualité de Vie au Travail, renforcez la cohésion d'équipe et boostez l'attractivité de votre marque employeur.</p>
+            <div class="photo-card">
+                <img src="Kiosque.png" alt="Kiosque La Barket">
             </div>
         </div>
-    </section>
 
-    <!-- Section Quimper -->
-    <section id="quimper" class="solution-quimper">
-        <h2 class="section-title">La Solution La Barket Quimper & Finistère</h2>
-        <p class="section-subtitle">Un service de proximité pensé sur-mesure pour les entreprises locales</p>
-        
-        <div class="quimper-grid">
-            <div class="quimper-box">
-                <h3>Ancrage Local & Finistérien</h3>
-                <p>Implantés au cœur de Quimper, nous intervenons rapidement sur toutes les zones d'activités (Créac'h Gwen, Gourvily, Pabu, etc.).</p>
-                <p>Nous collaborons étroitement avec des artisans et producteurs locaux pour garantir une cuisine authentique, saine et de saison.</p>
-            </div>
-            <div>
-                <img src="L'équipe.jpg" alt="L'équipe La Barket Quimper" class="img-featured">
-            </div>
+        <!-- Boutons de filtrage -->
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterRecettes('all')">✨ Tout afficher</button>
+            <button class="filter-btn" onclick="filterRecettes('plat')">🍲 Nos Plats</button>
+            <button class="filter-btn" onclick="filterRecettes('dessert')">🍰 Nos Desserts</button>
         </div>
-    </section>
 
-    <!-- Section Kiosque -->
-    <section id="kiosque" class="kiosque-haute-capacite">
-        <h2 class="section-title">Un Kiosque Haute Capacité Conçu pour la Restauration Fraîche</h2>
-        <p class="section-subtitle">Une technologie moderne pour répondre aux besoins des petites comme des grandes équipes</p>
-        
-        <div class="kiosque-grid">
-            <div>
-                <img src="Kiosque.png" alt="Distributeurs Kiosques La Barket" class="img-featured">
-            </div>
-
-            <div class="kiosque-specs">
-                <h3>Performance & Technologie Ascenseur</h3>
-                <p style="margin-bottom: 20px; color: #555;">Notre distributeur intelligent garantit la conservation optimale de la chaîne du froid et la sécurité des emballages lors de la délivrance du repas.</p>
-                <ul class="specs-list">
-                    <li><strong>Haute capacité :</strong> Stockage important pour servir tous vos collaborateurs sans rupture.</li>
-                    <li><strong>Système ascenseur doux :</strong> Traitement délicat de chaque plat pour préserver la présentation.</li>
-                    <li><strong>Gestion thermique intelligente :</strong> Maintien constant entre +2°C et +4°C.</li>
-                    <li><strong>Paiement sans-contact :</strong> Titres-restaurant, CB et smartphone acceptés en 3 secondes.</li>
-                </ul>
-            </div>
+        <!-- Bandeau Fait Maison -->
+        <div class="homemade-banner">
+            👨‍🍳 Tous nos plats et tous nos desserts sont FAIT MAISON par nos chefs 👨‍🍳
         </div>
-    </section>
 
-    <!-- Galerie de Plats et Desserts -->
-    <section id="cantine" style="background: var(--light-bg);">
-        <h2 class="section-title">La Cantine Fraîche & Nos Recettes</h2>
-        <p class="section-subtitle">Des plats cuisinés locaux pour tous vos collaborateurs</p>
-        
-        <div class="dishes-gallery">
-            <div class="dish-card">
-                <img src="Salade de roquefort.jpg" alt="Salade Roquefort">
-                <div class="dish-card-info">
-                    <h4>Salade Roquefort & Raisins</h4>
+        <!-- Grille des recettes classées par catégorie -->
+        <div class="original-photos-container" id="recettes-grid">
+            <!-- Plats -->
+            <div class="photo-card" data-category="plat"><img src="creme-cepes.jpg" alt="Crème de cèpes et parmesan"></div>
+            <div class="photo-card" data-category="plat"><img src="salade-curry.png" alt="Salade de poulet mariné au curry et citronnelle"></div>
+            <div class="photo-card" data-category="plat"><img src="poulet.jpg" alt="Poulet à l'espagnole"></div>
+            <div class="photo-card" data-category="plat"><img src="roquefort.jpg" alt="Salade de roquefort"></div>
+            <div class="photo-card" data-category="plat"><img src="lasagnes.png" alt="Lasagnes"></div>
+            <div class="photo-card" data-category="plat"><img src="feta.png" alt="Recette Feta"></div>
+            <div class="photo-card" data-category="plat"><img src="saumon.png" alt="Recette Saumon"></div>
+            <div class="photo-card" data-category="plat"><img src="saute.png" alt="Recette Sauté"></div>
+
+            <!-- Desserts -->
+            <div class="photo-card" data-category="dessert"><img src="moelleux.jpg" alt="Moelleux au chocolat"></div>
+            <div class="photo-card" data-category="dessert"><img src="mousse.jpg" alt="Mousse à la figue de barbarie"></div>
+            <div class="photo-card" data-category="dessert"><img src="cheesecake.png" alt="Cheesecake"></div>
+            <div class="photo-card" data-category="dessert"><img src="cookie.png" alt="Cookie"></div>
+            <div class="photo-card" data-category="dessert"><img src="power.png" alt="Power Bowl"></div>
+            <div class="photo-card" data-category="dessert"><img src="mangue.png" alt="Recette Mangue"></div>
+        </div>
+
+        <div class="promos-container">
+            <div class="promo-card">
+                <h2>Offre Entreprise B2B</h2>
+                <div class="media-wrapper">
+                    <img src="offredujour.png" alt="Offre B2B La Barket">
+                </div>
+                <p>Découvrez nos formules adaptées pour vos réunions et déjeuners d'équipe !</p>
+                <div class="btn-container">
+                    <div class="btn-channel btn-whatsapp"></div>
+                    <div class="btn-channel btn-ubereats"></div>
                 </div>
             </div>
 
-            <div class="dish-card">
-                <img src="Crème de ceps et parmesan.jpg" alt="Crème de cèpes et parmesan">
-                <div class="dish-card-info">
-                    <h4>Crème de Cèpes & Parmesan</h4>
+            <div class="promo-card">
+                <h2>Abonnement & Plateaux</h2>
+                <div class="media-wrapper">
+                    <img src="superpromo.png" alt="Super Promo B2B La Barket">
                 </div>
-            </div>
-
-            <div class="dish-card">
-                <img src="Poulet a l'espagnole.jpg" alt="Poulet à l'espagnole">
-                <div class="dish-card-info">
-                    <h4>Poulet à l'Espagnole & Chorizo</h4>
-                </div>
-            </div>
-
-            <div class="dish-card">
-                <img src="Salade de poulet mariné au curry et citronnelle.png" alt="Salade de poulet mariné au curry et citronnelle">
-                <div class="dish-card-info">
-                    <h4>Salade de Poulet Mariné au Curry & Citronnelle</h4>
-                </div>
-            </div>
-
-            <div class="dish-card">
-                <img src="lasagnes.png" alt="Lasagnes de légumes grillés">
-                <div class="dish-card-info">
-                    <h4>Lasagnes de Légumes Grillés</h4>
-                </div>
-            </div>
-
-            <div class="dish-card">
-                <img src="Moelleux au chocolat.jpg" alt="Moelleux au chocolat praliné">
-                <div class="dish-card-info">
-                    <h4>Moelleux Chocolat Praliné</h4>
-                </div>
-            </div>
-
-            <div class="dish-card">
-                <img src="Mousse a la figue de barbarie.jpg" alt="Mousse à la figue de barbarie">
-                <div class="dish-card-info">
-                    <h4>Mousse Figue de Barbarie</h4>
-                </div>
-            </div>
-
-            <div class="dish-card">
-                <img src="cookie.png" alt="Cookie noisette et chocolat">
-                <div class="dish-card-info">
-                    <h4>Cookie Noisette & Chocolat</h4>
-                </div>
-            </div>
-
-            <div class="dish-card">
-                <img src="cheesecake.png" alt="Cheesecake vanille spéculoos">
-                <div class="dish-card-info">
-                    <h4>Cheesecake Vanille Spéculoos</h4>
+                <p>Profitez de solutions régulières et sur-mesure pour vos collaborateurs.</p>
+                <div class="btn-container">
+                    <div class="btn-channel btn-whatsapp"></div>
+                    <div class="btn-channel btn-ubereats"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Offres Section -->
-    <section id="offres">
-        <h2 class="section-title">Une Offre 100% Zéro Coût pour l'Employeur</h2>
-        <p class="section-subtitle">Un modèle économique transparent et sans mauvaise surprise</p>
-        <div class="cards-grid">
-            <div class="card">
-                <h3>0€ d'Investissement</h3>
-                <p>L'installation, la mise en service et la logistique du kiosque sont intégralement prises en charge par nos équipes.</p>
-            </div>
-            <div class="card">
-                <h3>Gestion Zéro Contrainte</h3>
-                <p>Nous assurons un réassort régulier, la maintenance préventive et le suivi qualité complet de la structure au quotidien.</p>
-            </div>
-            <div class="card">
-                <h3>Autonomie Salariée</h3>
-                <p>Chaque collaborateur gère ses achats en toute autonomie directement sur le kiosque intelligent de l'entreprise.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Simulator Section -->
-    <section id="simulateur" class="simulator-section">
-        <h2 class="section-title">Simulateur d'Impact RH & Bien-être</h2>
-        <p class="section-subtitle">Mesurez les bénéfices d'une offre de restauration qualitative pour vos équipes</p>
-        <div class="simulator-box">
-            <div class="form-group">
-                <label for="employees">Nombre de collaborateurs sur votre site :</label>
-                <input type="number" id="employees" placeholder="Ex: 50" min="5" oninput="calculateImpact()">
-            </div>
-            <div id="sim-result" class="result-box">
-                <p>Pour vos <strong><span id="res-count">0</span> collaborateurs</strong> :</p>
-                <p style="margin-top: 8px;"><strong>+<span id="res-hours">0</span> heures</strong> de sérénité et de temps de pause optimisé par mois.</p>
-                <p style="margin-top: 8px;">🚀 Un levier fort d'attractivité et de bien-être au bureau !</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2 class="section-title">Discutons de Votre Projet à Quimper</h2>
-        <p class="section-subtitle">Contactez-nous pour organiser une présentation ou une dégustation</p>
-        
-        <form class="contact-form" action="https://formspree.io/f/xaeedbzg" method="POST">
-            <input type="hidden" name="_next" value="#contact">
-            <input type="text" name="entreprise" placeholder="Nom de l'entreprise (ex: Zone Créac'h Gwen)" required>
-            <input type="text" name="nom" placeholder="Votre Nom et Prénom" required>
-            <input type="email" name="email" placeholder="Adresse Email professionnelle" required>
-            <input type="tel" name="telephone" placeholder="Numéro de téléphone">
-            <textarea name="message" rows="4" placeholder="Précisez votre besoin ou le nombre de salariés..."></textarea>
-            <button type="submit" class="btn">Envoyer la demande</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <img src="logo.png" alt="La Barket Logo" class="logo-img">
-        <p>&copy; 2026 La Barket - Solutions de Restauration B2B Quimper & Finistère. Tous droits réservés.</p>
+        <p>© La Barket Quimper - 49 Boulevard Amiral de Kerguélen (Espace Entreprises)</p>
     </footer>
 
     <script>
-        function calculateImpact() {
-            const count = document.getElementById('employees').value;
-            const resultBox = document.getElementById('sim-result');
-            
-            if (count && count > 0) {
-                document.getElementById('res-count').textContent = count;
-                document.getElementById('res-hours').textContent = Math.round(count * 1.5);
-                resultBox.style.display = 'block';
-            } else {
-                resultBox.style.display = 'none';
-            }
+        function filterRecettes(category) {
+            const cards = document.querySelectorAll('.original-photos-container .photo-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         }
     </script>
+
 </body>
 </html>
