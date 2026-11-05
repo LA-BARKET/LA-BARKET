@@ -316,6 +316,55 @@
             justify-content: center;
         }
 
+        /* Section Ce que disent les salariés (Avis B2B) */
+        .reviews-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px 30px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
+        }
+        .reviews-container h2 {
+            color: #1845AD;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .reviews-subtitle {
+            text-align: center;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .reviews-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .reviews-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+            color: #555;
+            font-size: 0.98rem;
+        }
+        .reviews-list li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: #1845AD;
+            font-size: 1.3rem;
+            top: -2px;
+        }
+        .reviews-list li strong {
+            color: #222;
+        }
+
         /* Promos & Offres B2B */
         .promos-container {
             display: flex;
@@ -511,7 +560,7 @@
                 <div class="photo-card">
                     <img src="cantine-connectee.png" alt="Cantine connectée La Barket">
                     <div class="address-caption">
-                        Cantine ...
+                        Cantine Connectée
                     </div>
                 </div>
             </div>
@@ -548,6 +597,18 @@
             <div class="photo-card" data-category="dessert"><img src="cookie.png" alt="Cookie"></div>
             <div class="photo-card" data-category="dessert"><img src="power.png" alt="Power Bowl"></div>
             <div class="photo-card" data-category="dessert"><img src="mangue.png" alt="Recette Mangue"></div>
+        </div>
+
+        <!-- Section Ce que disent les salariés -->
+        <div class="reviews-container">
+            <h2>Ce que disent les salariés :</h2>
+            <div class="reviews-subtitle">👍 Les points forts les plus cités</div>
+            <ul class="reviews-list">
+                <li><strong>Qualité de la cuisine :</strong> Les clients soulignent que les plats sont savoureux, frais et ont le "vrai goût du fait maison".</li>
+                <li><strong>Rapidité et praticité :</strong> Le système de libre-service et de frigos connectés est jugé parfait pour les pauses déjeuner des actifs ou pour un repas rapide le soir sans perdre de temps.</li>
+                <li><strong>Prix très abordables :</strong> Le coût reste très compétitif pour de la cuisine de chef, permettant de bien manger sans se ruiner.</li>
+                <li><strong>Générosité :</strong> Les portions sont jugées copieuses et rassasiantes.</li>
+            </ul>
         </div>
 
         <!-- Offres et formules B2B -->
