@@ -65,13 +65,20 @@
             background-color: rgba(255, 255, 255, 0.25);
         }
         .stacked-photos-container {
-            max-width: 600px;
+            max-width: 900px;
             margin: 30px auto;
             padding: 0 20px;
             display: flex;
             flex-direction: column;
             gap: 25px;
             align-items: center;
+        }
+        .side-by-side-row {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         .photo-card {
             background: #ffffff;
@@ -84,6 +91,10 @@
             padding: 15px;
             box-sizing: border-box;
             width: 100%;
+        }
+        .side-by-side-row .photo-card {
+            flex: 1;
+            min-width: 280px;
         }
         .photo-card img {
             width: 100%;
@@ -239,10 +250,6 @@
 </head>
 <body>
 
-    <div class="top-nav">
-        <a href="index.html">← Accéder à l'Espace Entreprises (B2B)</a>
-    </div>
-
     <header>
         <h1>La Barket - Espace Particuliers</h1>
         <p>Vos formules savoureuses à emporter ou en livraison à Quimper</p>
@@ -257,13 +264,21 @@
     </header>
 
     <main>
-        <!-- L'équipe avec l'adresse, les horaires et Le Kiosque -->
+        <!-- L'équipe + La boutique côte à côte, suivies du Kiosque -->
         <div class="stacked-photos-container">
-            <div class="photo-card">
-                <img src="equipe.jpg" alt="L'équipe La Barket">
-                <div class="address-caption">
-                    📍 49 Boulevard Amiral de Kerguélen, Quimper<br>
-                    🕒 Ouvert de 10H à 22H
+            <div class="side-by-side-row">
+                <div class="photo-card">
+                    <img src="equipe.jpg" alt="L'équipe La Barket">
+                    <div class="address-caption">
+                        📍 49 Boulevard Amiral de Kerguélen, Quimper<br>
+                        🕒 Ouvert de 10H à 22H
+                    </div>
+                </div>
+                <div class="photo-card">
+                    <img src="Boutique.png" alt="Boutique La Barket">
+                    <div class="address-caption">
+                        📍 Quai de l'Odet
+                    </div>
                 </div>
             </div>
             <div class="photo-card">
@@ -271,9 +286,10 @@
             </div>
         </div>
 
-        <!-- Boutons de filtrage -->
+        <!-- Boutons de filtrage (avec Menu du jour) -->
         <div class="filter-container">
             <button class="filter-btn active" onclick="filterRecettes('all')">✨ Tout afficher</button>
+            <button class="filter-btn" onclick="filterRecettes('menu')">🍽️ Menu du jour</button>
             <button class="filter-btn" onclick="filterRecettes('plat')">🍲 Nos Plats</button>
             <button class="filter-btn" onclick="filterRecettes('dessert')">🍰 Nos Desserts</button>
         </div>
@@ -283,8 +299,13 @@
             👨‍🍳 Tous nos plats et tous nos desserts sont FAIT MAISON par nos chefs 👨‍🍳
         </div>
 
-        <!-- Grille des recettes classées par catégorie -->
+        <!-- Grille des recettes et menus -->
         <div class="original-photos-container" id="recettes-grid">
+            <!-- Menus du jour -->
+            <div class="photo-card" data-category="menu"><img src="menu.png" alt="Menu du Jour 1"></div>
+            <div class="photo-card" data-category="menu"><img src="menus.png" alt="Menu du Jour 2"></div>
+            <div class="photo-card" data-category="menu"><img src="menu9.90.png" alt="Menu du Jour 9.90€"></div>
+
             <!-- Plats -->
             <div class="photo-card" data-category="plat"><img src="creme-cepes.jpg" alt="Crème de cèpes et parmesan"></div>
             <div class="photo-card" data-category="plat"><img src="salade-curry.png" alt="Salade de poulet mariné au curry et citronnelle"></div>
