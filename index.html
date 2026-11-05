@@ -214,12 +214,19 @@
 
         /* Visuels Kiosque & Équipe */
         .stacked-photos-container {
-            max-width: 600px;
+            max-width: 900px;
             margin: 30px auto;
             display: flex;
             flex-direction: column;
             gap: 25px;
             align-items: center;
+        }
+        .side-by-side-row {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         .photo-card {
             background: #ffffff;
@@ -232,6 +239,10 @@
             padding: 15px;
             box-sizing: border-box;
             width: 100%;
+        }
+        .side-by-side-row .photo-card {
+            flex: 1;
+            min-width: 280px;
         }
         .photo-card img {
             width: 100%;
@@ -484,7 +495,7 @@
             </div>
         </div>
 
-        <!-- L'équipe et le kiosque -->
+        <!-- L'équipe et les visuels kiosque/cantine côte à côte -->
         <div class="stacked-photos-container">
             <div class="photo-card">
                 <img src="equipe.jpg" alt="L'équipe La Barket">
@@ -492,8 +503,17 @@
                     📍 49 Boulevard Amiral de Kerguélen, Quimper
                 </div>
             </div>
-            <div class="photo-card">
-                <img src="Kiosque.png" alt="Kiosque La Barket">
+            
+            <div class="side-by-side-row">
+                <div class="photo-card">
+                    <img src="Kiosque.png" alt="Kiosque La Barket">
+                </div>
+                <div class="photo-card">
+                    <img src="cantine-connectee.png" alt="Cantine connectée La Barket">
+                    <div class="address-caption">
+                        Cantine ...
+                    </div>
+                </div>
             </div>
         </div>
 
