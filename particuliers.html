@@ -112,6 +112,33 @@
             text-align: center;
             line-height: 1.5;
         }
+        
+        /* Style du texte de présentation inséré */
+        .concept-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            padding: 25px 30px;
+            width: 100%;
+            box-sizing: border-box;
+            border-left: 5px solid #1845AD;
+        }
+        .concept-card h3 {
+            color: #1845AD;
+            margin-top: 0;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+        .concept-card ul {
+            padding-left: 20px;
+            margin: 0;
+            color: #555;
+            line-height: 1.6;
+        }
+        .concept-card li {
+            margin-bottom: 8px;
+        }
+
         .filter-container {
             text-align: center;
             margin: 30px 0 15px 0;
@@ -313,6 +340,7 @@
     </div>
 
     <main>
+        <!-- L'équipe + La boutique côte à côte, suivies du texte concept et du Kiosque -->
         <div class="stacked-photos-container">
             <div class="side-by-side-row">
                 <div class="photo-card">
@@ -329,11 +357,21 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Texte inséré entre Boutique et Kiosque -->
+            <div class="concept-card">
+                <h3>La Barket à Quimper (Finistère) — Traiteur & frigos connectés</h3>
+                <ul>
+                    <li><strong>Le concept :</strong> Lancé par quatre amis, il s'agit d'un traiteur nouvelle génération proposant des plats faits maison par un chef (avec des produits frais et locaux) disponibles en libre-service via des frigos connectés ou en boutique.</li>
+                </ul>
+            </div>
+
             <div class="photo-card">
                 <img src="Kiosque.png" alt="Kiosque La Barket">
             </div>
         </div>
 
+        <!-- Boutons de filtrage (avec Menu du jour) -->
         <div class="filter-container">
             <button class="filter-btn active" onclick="filterRecettes('all')">✨ Tout afficher</button>
             <button class="filter-btn" onclick="filterRecettes('menu')">🍽️ Menu du jour</button>
@@ -341,10 +379,12 @@
             <button class="filter-btn" onclick="filterRecettes('dessert')">🍰 Nos Desserts</button>
         </div>
 
+        <!-- Bandeau Fait Maison -->
         <div class="homemade-banner">
             👨‍🍳 Tous nos plats et tous nos desserts sont FAIT MAISON par nos chefs 👨‍🍳
         </div>
 
+        <!-- Grille des recettes et menus -->
         <div class="original-photos-container" id="recettes-grid">
             <!-- Menus du jour -->
             <div class="photo-card" data-category="menu"><img src="menu.png" alt="Menu du Jour 1"></div>
@@ -370,6 +410,7 @@
             <div class="photo-card" data-category="dessert"><img src="mangue.png" alt="Recette Mangue"></div>
         </div>
 
+        <!-- Section Ce que disent les clients -->
         <div class="reviews-container">
             <h2>Ce que disent les clients :</h2>
             <div class="reviews-subtitle">👍 Les points forts les plus cités</div>
