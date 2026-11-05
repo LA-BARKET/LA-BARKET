@@ -46,24 +46,6 @@
             border-radius: 15px;
             outline: none;
         }
-        .top-nav {
-            background-color: #0d235c;
-            padding: 10px 20px;
-            text-align: right;
-        }
-        .top-nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.95rem;
-            background-color: rgba(255, 255, 255, 0.15);
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: background-color 0.2s;
-        }
-        .top-nav a:hover {
-            background-color: rgba(255, 255, 255, 0.25);
-        }
         .stacked-photos-container {
             max-width: 900px;
             margin: 30px auto;
@@ -112,7 +94,6 @@
             text-align: center;
             line-height: 1.5;
         }
-        /* Style des boutons de filtre */
         .filter-container {
             text-align: center;
             margin: 30px 0 15px 0;
@@ -138,7 +119,6 @@
             color: white;
             box-shadow: 0 4px 12px rgba(24, 69, 173, 0.3);
         }
-        /* Style du bandeau Fait Maison */
         .homemade-banner {
             max-width: 800px;
             margin: 0 auto 30px auto;
@@ -165,8 +145,6 @@
             gap: 25px;
             justify-content: center;
         }
-
-        /* Section Ce que dicen les clients */
         .reviews-container {
             max-width: 900px;
             margin: 40px auto;
@@ -214,7 +192,6 @@
         .reviews-list li strong {
             color: #222;
         }
-
         .promos-container {
             display: flex;
             flex-wrap: wrap;
@@ -314,7 +291,6 @@
     </header>
 
     <main>
-        <!-- L'équipe + La boutique côte à côte, suivies du Kiosque -->
         <div class="stacked-photos-container">
             <div class="side-by-side-row">
                 <div class="photo-card">
@@ -325,7 +301,7 @@
                     </div>
                 </div>
                 <div class="photo-card">
-                    <img src="Boutique.png" alt="Boutique La Barket">
+                    <img src="boutique.png" alt="Boutique La Barket">
                     <div class="address-caption">
                         📍 Quai de l'Odet
                     </div>
@@ -336,7 +312,6 @@
             </div>
         </div>
 
-        <!-- Boutons de filtrage (avec Menu du jour) -->
         <div class="filter-container">
             <button class="filter-btn active" onclick="filterRecettes('all')">✨ Tout afficher</button>
             <button class="filter-btn" onclick="filterRecettes('menu')">🍽️ Menu du jour</button>
@@ -344,12 +319,10 @@
             <button class="filter-btn" onclick="filterRecettes('dessert')">🍰 Nos Desserts</button>
         </div>
 
-        <!-- Bandeau Fait Maison -->
         <div class="homemade-banner">
             👨‍🍳 Tous nos plats et tous nos desserts sont FAIT MAISON par nos chefs 👨‍🍳
         </div>
 
-        <!-- Grille des recettes et menus -->
         <div class="original-photos-container" id="recettes-grid">
             <!-- Menus du jour -->
             <div class="photo-card" data-category="menu"><img src="menu.png" alt="Menu du Jour 1"></div>
@@ -375,9 +348,8 @@
             <div class="photo-card" data-category="dessert"><img src="mangue.png" alt="Recette Mangue"></div>
         </div>
 
-        <!-- Section Ce que dicen les clients -->
         <div class="reviews-container">
-            <h2>Ce que dicen les clients :</h2>
+            <h2>Ce que disent les clients :</h2>
             <div class="reviews-subtitle">👍 Les points forts les plus cités</div>
             <ul class="reviews-list">
                 <li><strong>Qualité de la cuisine :</strong> Les clients soulignent que les plats sont savoureux, frais et ont le "vrai goût du fait maison". Les recettes d'inspiration asiatique (comme la salade de poulet asiatique) rencontrent un franc succès.</li>
