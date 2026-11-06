@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Barket - Espace Particuliers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1845AD;
+            --primary-dark: #0d235c;
+            --primary-light: #eef3ff;
+            --accent: #25D366;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 25px -5px rgba(24, 69, 173, 0.1);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0; padding: 0;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white; text-align: center; padding: 3rem 1.5rem;
+        }
+        header h1 { margin: 0; font-size: 2.5rem; font-weight: 800; }
+        header p { margin-top: 0.75rem; font-size: 1.15rem; opacity: 0.9; }
+        .top-nav { background-color: var(--primary-dark); padding: 12px 24px; text-align: right; }
+        .top-nav a {
+            color: white; text-decoration: none; font-weight: 600;
+            background-color: rgba(255, 255, 255, 0.12); padding: 10px 20px; border-radius: 30px;
+        }
+        main { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+        .stacked-photos-container { margin: 40px auto; display: flex; flex-direction: column; gap: 24px; align-items: center; }
+        .side-by-side-row { display: flex; gap: 24px; width: 100%; justify-content: center; flex-wrap: wrap; }
+        .photo-card {
+            background: var(--card-bg); border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md); overflow: hidden; display: flex;
+            flex-direction: column; align-items: center; padding: 18px; width: 100%;
+            border: 1px solid #f1f5f9; box-sizing: border-box;
+        }
+        .side-by-side-row .photo-card { flex: 1; min-width: 280px; }
+        .photo-card img { width: 100%; height: auto; max-height: 360px; border-radius: var(--radius-md); object-fit: contain; display: block; }
+        .address-caption { margin-top: 14px; font-size: 0.95rem; color: var(--text-muted); font-weight: 600; text-align: center; }
+        .concept-card {
+            background: var(--card-bg); border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+            padding: 28px 32px; width: 100%; box-sizing: border-box; border-left: 6px solid var(--primary);
+        }
+        .concept-card h3 { color: var(--primary); margin-top: 0; font-size: 1.35srem; }
+        .original-photos-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; margin-bottom: 50px; }
+        footer { text-align: center; padding: 30px; color: var(--text-muted); background: #ffffff; margin-top: 60px; border-top: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>La Barket - Espace Particuliers</h1>
+        <p>Vos formules savoureuses à emporter ou en livraison à Quimper</p>
+    </header>
+
+    <div class="top-nav">
+        <a href="index.html">🏢 Accès Entreprises (B2B)</a>
+    </div>
+
+    <main>
+        <div class="stacked-photos-container">
+            <div class="side-by-side-row">
+                <div class="photo-card">
+                    <img src="photo1.jpg" alt="L'équipe La Barket">
+                    <div class="address-caption">📍 49 Boulevard Amiral de Kerguélen, Quimper</div>
+                </div>
+                <div class="photo-card">
+                    <img src="boutique.png" alt="Boutique La Barket">
+                    <div class="address-caption">📍 Quai de l'Odet</div>
+                </div>
+            </div>
+
+            <div class="concept-card">
+                <h3>La Barket à Quimper (Finistère) — Traiteur & frigos connectés</h3>
+                <p>Plats faits maison par un chef avec des produits frais et locaux, en libre-service via des frigos connectés ou en boutique.</p>
+            </div>
+        </div>
+
+        <div class="original-photos-container">
+            <div class="photo-card"><img src="plat1.jpg" alt="Crème de cèpes"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© La Barket Quimper - 49 Boulevard Amiral de Kerguélen</p>
+    </footer>
+
+</body>
+</html>
