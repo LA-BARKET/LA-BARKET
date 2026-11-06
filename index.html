@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Barket - Espace Entreprises (B2B)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f8f9fa;
             color: #333;
+            -webkit-font-smoothing: antialiased;
         }
         header {
-            background-color: #1845AD;
+            background: linear-gradient(135deg, #1845AD 0%, #0d235c 100%);
             color: white;
             text-align: center;
             padding: 2.5rem 1rem 2rem 1rem;
@@ -21,6 +25,7 @@
         header h1 {
             margin: 0;
             font-size: 2.4rem;
+            font-weight: 800;
         }
         header p {
             margin-top: 0.5rem;
@@ -100,7 +105,7 @@
             line-height: 1.5;
         }
 
-        /* SIMULATEUR B2B (Salariés & Temps économisé en heures) */
+        /* SIMULATEUR B2B */
         .simulator-card {
             background: linear-gradient(135deg, #ffffff, #f0f4ff);
             border: 2px solid #1845AD;
@@ -261,7 +266,7 @@
             line-height: 1.5;
         }
 
-        /* Style des boutons de filtre */
+        /* Boutons de filtre */
         .filter-container {
             text-align: center;
             margin: 40px 0 15px 0;
@@ -287,7 +292,7 @@
             box-shadow: 0 4px 12px rgba(24, 69, 173, 0.3);
         }
 
-        /* Style du bandeau Fait Maison */
+        /* Bandeau Fait Maison */
         .homemade-banner {
             max-width: 800px;
             margin: 0 auto 35px auto;
@@ -316,7 +321,7 @@
             justify-content: center;
         }
 
-        /* Section Ce que disent les salariés (Avis B2B) */
+        /* Section Avis */
         .reviews-container {
             max-width: 900px;
             margin: 40px auto;
@@ -487,7 +492,7 @@
             </div>
         </div>
 
-        <!-- SIMULATEUR B2B (Salariés & Temps économisé en heures) -->
+        <!-- SIMULATEUR B2B -->
         <div class="simulator-card">
             <h2>📊 Simulateur de Gains de Temps</h2>
             <p>Estimez le nombre de salariés concernés ainsi que le temps précieux économisé chaque jour et sur l'année.</p>
@@ -544,10 +549,10 @@
             </div>
         </div>
 
-        <!-- L'équipe et les visuels kiosque/cantine côte à côte -->
+        <!-- L'équipe et les visuels kiosque/cantine -->
         <div class="stacked-photos-container">
             <div class="photo-card">
-                <img src="equipe.jpg" alt="L'équipe La Barket">
+                <img src="photo1.jpg" alt="L'équipe La Barket">
                 <div class="address-caption">
                     📍 49 Boulevard Amiral de Kerguélen, Quimper
                 </div>
@@ -555,7 +560,7 @@
             
             <div class="side-by-side-row">
                 <div class="photo-card">
-                    <img src="Kiosque.png" alt="Kiosque La Barket">
+                    <img src="kiosque.png" alt="Kiosque La Barket">
                 </div>
                 <div class="photo-card">
                     <img src="cantine-connectee.png" alt="Cantine connectée La Barket">
@@ -581,7 +586,7 @@
         <!-- Grille des recettes -->
         <div class="original-photos-container" id="recettes-grid">
             <!-- Plats -->
-            <div class="photo-card" data-category="plat"><img src="creme-cepes.jpg" alt="Crème de cèpes et parmesan"></div>
+            <div class="photo-card" data-category="plat"><img src="plat1.jpg" alt="Crème de cèpes et parmesan"></div>
             <div class="photo-card" data-category="plat"><img src="salade-curry.png" alt="Salade de poulet mariné au curry et citronnelle"></div>
             <div class="photo-card" data-category="plat"><img src="poulet.jpg" alt="Poulet à l'espagnole"></div>
             <div class="photo-card" data-category="plat"><img src="roquefort.jpg" alt="Salade de roquefort"></div>
@@ -644,7 +649,6 @@
     </footer>
 
     <script>
-        // Logique du filtre de recettes
         function filterRecettes(category) {
             const cards = document.querySelectorAll('.original-photos-container .photo-card');
             const buttons = document.querySelectorAll('.filter-btn');
@@ -661,7 +665,6 @@
             });
         }
 
-        // Logique du simulateur de temps gagné
         function calculerSimulateur() {
             const effectif = parseInt(document.getElementById('effectif').value) || 0;
             const minutesGagneesParRepas = parseInt(document.getElementById('temps-pause').value) || 0;
