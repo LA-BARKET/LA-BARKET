@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/particuliers.html",
+  "start_url": "LA-BARKET/particuliers.html",
   "background_color": "#EDF3ED",
   "theme_color": "#052408",
   "display": "standalone"
