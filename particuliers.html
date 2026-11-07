@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -155,7 +154,7 @@
         .photo-card {
             background: var(--card-bg);
             border-radius: var(--radius-xl);
-            overflow: visible; /* Permet à votre image de branche de dépasser artistiquement du cadre */
+            overflow: visible; /* Permet à photo3.png de dépasser artistiquement du cadre */
             box-shadow: var(--shadow-subtle);
             border: 2px solid #052408;
             transition: all 0.3s ease;
@@ -170,15 +169,15 @@
             box-shadow: var(--shadow-hover);
         }
 
-        /* Intégration de votre fichier branche-verte.png en haut à gauche */
+        /* Intégration de photo3.png en haut à gauche de chaque carte */
         .photo-card::before {
             content: '';
             position: absolute;
-            top: -20px;
+            top: -18px;
             left: -16px;
-            width: 65px;
-            height: 65px;
-            background-image: url('branche-verte.png');
+            width: 55px;
+            height: 55px;
+            background-image: url('photo3.png');
             background-repeat: no-repeat;
             background-size: contain;
             z-index: 6;
@@ -393,90 +392,4 @@
                 <div class="photo-info">La Boutique — Quai de l'Odet 🍊</div>
             </div>
             <div class="photo-card photo-card-centered">
-                <div class="image-wrapper"><img src="kiosque.png" alt="Kiosque La Barket"></div>
-                <div class="photo-info">Nos Kiosques & Frigos Connectés 🍊</div>
-            </div>
-        </div>
-
-        <div class="filter-section">
-            <div class="filter-container">
-                <button class="filter-btn active" onclick="filterRecettes('all')">✨ Tout afficher</button>
-                <button class="filter-btn" onclick="filterRecettes('menu')">🍽️ Menus</button>
-                <button class="filter-btn" onclick="filterRecettes('plat')">🍲 Plats</button>
-                <button class="filter-btn" onclick="filterRecettes('dessert')">🍰 Desserts</button>
-            </div>
-        </div>
-
-        <div class="homemade-badge">
-            🌿 100% Fait Maison par nos chefs avec des produits frais du terroir 🍊
-        </div>
-
-        <!-- Grille des recettes -->
-        <div class="photo-grid" id="recettes-grid">
-            <div class="photo-card" data-category="menu"><div class="image-wrapper"><img src="menu.png" alt="Menu 1"></div><div class="photo-info">Menu du Jour 🍊</div></div>
-            <div class="photo-card" data-category="menu"><div class="image-wrapper"><img src="menus.png" alt="Menu 2"></div><div class="photo-info">Formule Complète 🍊</div></div>
-            <div class="photo-card" data-category="menu"><div class="image-wrapper"><img src="menu9.90.png" alt="Menu 9.90"></div><div class="photo-info">Menu Malin 9,90€ 🍊</div></div>
-
-            <div class="photo-card" data-category="plat"><div class="image-wrapper"><img src="plat1.jpg" alt="Creme de cepes"></div><div class="photo-info">Crème de Cèpes 🍊</div></div>
-            <div class="photo-card" data-category="plat"><div class="image-wrapper"><img src="salade-curry.png" alt="Salade poulet curry"></div><div class="photo-info">Salade Poulet Curry 🍊</div></div>
-            <div class="photo-card" data-category="plat"><div class="image-wrapper"><img src="poulet.jpg" alt="Poulet espagnole"></div><div class="photo-info">Poulet Façon Espagnole 🍊</div></div>
-            <div class="photo-card" data-category="plat"><div class="image-wrapper"><img src="roquefort.jpg" alt="Salade roquefort"></div><div class="photo-info">Salade Roquefort & Noix 🍊</div></div>
-            <div class="photo-card" data-category="plat"><div class="image-wrapper"><img src="lasagnes.png" alt="Lasagnes"></div><div class="photo-info">Lasagnes Maison 🍊</div></div>
-            <div class="photo-card" data-category="plat"><div class="image-wrapper"><img src="feta.png" alt="Feta"></div><div class="photo-info">Salade Feta Fraîcheur 🍊</div></div>
-            <div class="photo-card" data-category="plat"><div class="image-wrapper"><img src="saumon.png" alt="Saumon"></div><div class="photo-info">Pavé de Saumon 🍊</div></div>
-            <div class="photo-card" data-category="plat"><div class="image-wrapper"><img src="saute.png" alt="Saute"></div><div class="photo-info">Sauté de Porc 🍊</div></div>
-
-            <div class="photo-card" data-category="dessert"><div class="image-wrapper"><img src="moelleux.jpg" alt="Moelleux"></div><div class="photo-info">Moelleux Chocolat 🍊</div></div>
-            <div class="photo-card" data-category="dessert"><div class="image-wrapper"><img src="mousse.jpg" alt="Mousse"></div><div class="photo-info">Mousse au Chocolat 🍊</div></div>
-            <div class="photo-card" data-category="dessert"><div class="image-wrapper"><img src="cheesecake.png" alt="Cheesecake"></div><div class="photo-info">Cheesecake Maison 🍊</div></div>
-            <div class="photo-card" data-category="dessert"><div class="image-wrapper"><img src="cookie.png" alt="Cookie"></div><div class="photo-info">Cookie XXL 🍊</div></div>
-            <div class="photo-card" data-category="dessert"><div class="image-wrapper"><img src="power.png" alt="Power Bowl"></div><div class="photo-info">Power Bowl Fruité 🍊</div></div>
-            <div class="photo-card" data-category="dessert"><div class="image-wrapper"><img src="mangue.png" alt="Mangue"></div><div class="photo-info">Douceur Mangue 🍊</div></div>
-        </div>
-
-        <div class="reviews-section">
-            <h2>Ce que nos clients en disent</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <strong>Qualité de la cuisine</strong>
-                    <p>Des plats savoureux, frais, avec le vrai goût du fait maison qui change du quotidien.</p>
-                </div>
-                <div class="review-card">
-                    <strong>Rapidité & Praticité</strong>
-                    <p>Idéal pour les pauses déjeuners express sans jamais compromettre le goût.</p>
-                </div>
-                <div class="review-card">
-                    <strong>Prix Abordables</strong>
-                    <p>Un rapport qualité-prix redoutable pour de la cuisine préparée par un chef.</p>
-                </div>
-                <div class="review-card">
-                    <strong>Générosité</strong>
-                    <p>Des portions copieuses et rassasiantes qui font plaisir à voir (et à manger !).</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <p>© 2026 La Barket Quimper — 49 Boulevard Amiral de Kerguelen. Tous droits réservés.</p>
-    </footer>
-
-    <script>
-        function filterRecettes(category) {
-            const cards = document.querySelectorAll('#recettes-grid .photo-card');
-            const buttons = document.querySelectorAll('.filter-btn');
-
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
-</body>
-</html>
+                <div class="image-wrapper"><img src="kiosque.png" alt="Kiosque La Bark
