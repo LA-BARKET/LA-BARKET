@@ -1,1 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Barket</title>
 
+    <link rel="apple-touch-icon" href="logo1.png?v=3">
+    <link rel="icon" type="image/png" href="logo1.png?v=3">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="La Barket">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+        }
+        header {
+            background: linear-gradient(135deg, #1845AD 0%, #0d235c 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        .header-logo {
+            width: 140px;
+            height: auto;
+            max-height: 90px;
+            object-fit: contain;
+            margin: 0 auto 12px auto;
+            display: block;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 18px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.1rem;
+            font-weight: 800;
+        }
+        header p {
+            margin-top: 0.4rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+        .stacked-photos-container {
+            max-width: 850px;
+            margin: 20px auto 30px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .photo-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 15px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            max-height: 350px;
+            border-radius: 10px;
+            object-fit: contain;
+            display: block;
+        }
+        .address-caption {
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #555;
+            font-weight: 600;
+            text-align: center;
+        }
+        .filter-container {
+            text-align: center;
+            margin: 30px 0 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            background-color: #e9ecef;
+            border: none;
+            color: #333;
+            padding: 10px 18px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #1845AD;
+            color: white;
+            box-shadow: 0 4px 12px rgba(24, 69, 173, 0.3);
+        }
+        .homemade-banner {
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+            padding: 12px 18px;
+            background: linear-gradient(135deg, #1845AD, #0d235c);
+            color: white;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(24, 69, 173, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .original-photos-container {
+            max-width: 1100px;
+            margin: 20px auto 35px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            justify-content: center;
+        }
+        .reviews-container {
+            max-width: 850px;
+            margin: 35px auto;
+            padding: 22px 25px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            box-sizing: border-box;
+        }
+        .reviews-container h2 {
+            color: #1845AD;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .reviews-subtitle {
+            text-align: center;
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+        .reviews-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .reviews-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 14px;
+            line-height: 1.5;
+            color: #555;
+            font-size: 0.95rem;
+        }
+        .reviews-list li::before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: #1845AD;
+            font-size: 1.3rem;
+            top: -2px;
+        }
+        .reviews-list li strong {
+            color: #222;
+        }
+        .promos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 950px;
+            margin: 35px auto;
+        }
+        .promo-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 420px;
+            padding: 22px;
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .promo-card h2 {
+            color: #1845AD;
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+        .media-wrapper {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #ffffff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .media-wrapper img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+        .promo-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            color: #777;
+            font-size: 0.85rem;
+            background-color: #eceff1;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo1.png?v=3" alt="Logo La Barket" class="header-logo">
+        <h1>La Barket</h1>
+        <p>Restauration fraîche & fait maison à Quimper</p>
+    </header>
+
+    <div class="container">
+        <div class="stacked-photos-container">
+            <div class="photo-card">
+                <img src="photo1.jpg" alt="L'équipe La Barket">
+                <div class="address-caption">
+                    📍 49 Boulevard Amiral de Kerguélen, Quimper
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterRecettes('all')">✨ Tout afficher</button>
+            <button class="filter-btn" onclick="filterRecettes('plat')">🍲 Nos Plats</button>
+            <button class="filter-btn" onclick="filterRecettes('dessert')">🍰 Nos Desserts</button>
+        </div>
+
+        <div class="homemade-banner">
+            👨‍🍳 Tous nos plats et tous nos desserts sont FAIT MAISON par nos chefs 👨‍🍳
+        </div>
+
+        <div class="original-photos-container" id="recettes-grid">
+            <div class="photo-card" data-category="plat"><img src="boulgour.png" alt="Boulgour Gourmand"></div>
+            <div class="photo-card" data-category="plat"><img src="girolles.png" alt="Poêlée de Girolles"></div>
+            <div class="photo-card" data-category="plat"><img src="porc-au-caramel.png" alt="Porc au Caramel"></div>
+            <div class="photo-card" data-category="plat"><img src="plat1.jpg" alt="Crème de cèpes et parmesan"></div>
+            <div class="photo-card" data-category="plat"><img src="salade-curry.png" alt="Salade de poulet mariné au curry et citronnelle"></div>
+            <div class="photo-card" data-category="plat"><img src="poulet.jpg" alt="Poulet à l'espagnole"></div>
+            <div class="photo-card" data-category="plat"><img src="roquefort.jpg" alt="Salade de roquefort"></div>
+            <div class="photo-card" data-category="plat"><img src="lasagnes.png" alt="Lasagnes"></div>
+            <div class="photo-card" data-category="plat"><img src="feta.png" alt="Recette Feta"></div>
+            <div class="photo-card" data-category="plat"><img src="saumon.png" alt="Recette Saumon"></div>
+            <div class="photo-card" data-category="plat"><img src="saute.png" alt="Recette Sauté"></div>
+
+            <div class="photo-card" data-category="dessert"><img src="tarte.png" alt="Tarte Maison"></div>
+            <div class="photo-card" data-category="dessert"><img src="tiramisu.png" alt="Tiramisu Gourmand"></div>
+            <div class="photo-card" data-category="dessert"><img src="moelleux.jpg" alt="Moelleux au chocolat"></div>
+            <div class="photo-card" data-category="dessert"><img src="mousse.jpg" alt="Mousse à la figue de barbarie"></div>
+            <div class="photo-card" data-category="dessert"><img src="cheesecake.png" alt="Cheesecake"></div>
+            <div class="photo-card" data-category="dessert"><img src="cookie.png" alt="Cookie"></div>
+            <div class="photo-card" data-category="dessert"><img src="power.png" alt="Power Bowl"></div>
+            <div class="photo-card" data-category="dessert"><img src="mangue.png" alt="Recette Mangue"></div>
+        </div>
+
+        <div class="reviews-container">
+            <h2>Ce que disent nos clients :</h2>
+            <div class="reviews-subtitle">👍 Les points forts les plus cités</div>
+            <ul class="reviews-list">
+                <li><strong>Qualité de la cuisine :</strong> Des plats savoureux, frais et préparés avec le "vrai goût du fait maison".</li>
+                <li><strong>Praticité :</strong> Des formules prêtes à déguster, idéales pour la pause déjeuner ou un repas rapide.</li>
+                <li><strong>Prix très abordables :</strong> Un rapport qualité-prix de chef pour manger sainement au quotidien.</li>
+                <li><strong>Générosité :</strong> Des portions copieuses et équilibrées.</li>
+            </ul>
+        </div>
+
+        <div class="promos-container">
+            <div class="promo-card">
+                <h2>Offre du Jour</h2>
+                <div class="media-wrapper">
+                    <img src="offredujour.png" alt="Offre du jour La Barket">
+                </div>
+                <p>Découvrez nos formules et suggestions du jour en boutique !</p>
+            </div>
+
+            <div class="promo-card">
+                <h2>Super Promo</h2>
+                <div class="media-wrapper">
+                    <img src="superpromo.png" alt="Super Promo La Barket">
+                </div>
+                <p>Profitez de nos offres spéciales sur la carte des recettes.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© La Barket Quimper - 49 Boulevard Amiral de Kerguélen</p>
+    </footer>
+
+    <script>
+        function filterRecettes(category) {
+            const cards = document.querySelectorAll('.original-photos-container .photo-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
