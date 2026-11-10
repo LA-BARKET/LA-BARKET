@@ -1,1 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Barket - Espace Entreprises</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+        }
+        header {
+            background: linear-gradient(135deg, #1845AD 0%, #0d235c 100%);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+        }
+        .header-logo {
+            width: 140px;
+            height: auto;
+            max-height: 90px;
+            object-fit: contain;
+            margin: 0 auto 12px auto;
+            display: block;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 12px;
+            border-radius: 18px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+        header p {
+            margin-top: 0.5rem;
+            font-size: 1.15rem;
+            opacity: 0.9;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 15px;
+        }
+        .app-link-container {
+            text-align: center;
+            margin: 10px 0 30px 0;
+        }
+        .btn-app {
+            display: inline-block;
+            background-color: #1845AD;
+            color: white;
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(24, 69, 173, 0.3);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .btn-app:hover {
+            background-color: #0d235c;
+            transform: translateY(-2px);
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-sizing: border-box;
+        }
+        .card h2 {
+            color: #1845AD;
+            margin-top: 0;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .solution-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+        .solution-item img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .simulator-box {
+            background: #eef2ff;
+            border: 2px solid #c7d2fe;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 15px;
+        }
+        .simulator-box label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #1e293b;
+        }
+        .simulator-box input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #cbd5e1;
+            outline: none;
+            margin-bottom: 20px;
+        }
+        .simulator-result {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #1845AD;
+            text-align: center;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .banner-container {
+            text-align: center;
+            margin: 35px 0;
+        }
+        .banner-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #777;
+            font-size: 0.9rem;
+            background-color: #eceff1;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
 
+    <header>
+        <img src="logo1.png" alt="Logo La Barket" class="header-logo">
+        <h1>La Barket - Espace Entreprises</h1>
+        <p>Solutions de restauration fraîche & autonome pour vos collaborateurs à Quimper</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Lien vers l'application grand public -->
+        <div class="app-link-container">
+            <a href="la-barket.html" class="btn-app">📱 Accéder à l'application & aux recettes</a>
+        </div>
+
+        <!-- 1. Utilisation intuitive -->
+        <div class="card">
+            <h2>💡 Utilisation intuitive pour vos équipes</h2>
+            <p>Offrez une pause déjeuner gourmande, saine et ultra-accessible directement dans vos locaux à Quimper. Nos solutions connectées s'adaptent à toutes les configurations d'entreprise.</p>
+            
+            <div class="solutions-grid">
+                <div class="solution-item">
+                    <img src="cantine-connectee.png" alt="Cantine Connectée La Barket">
+                    <h3>La Cantine Connectée</h3>
+                    <p>Un frigo intelligent approvisionné quotidiennement en plats et desserts frais préparés par nos chefs.</p>
+                </div>
+                <div class="solution-item">
+                    <img src="kiosque.png" alt="Kiosque La Barket">
+                    <h3>Le Kiosque Autonome</h3>
+                    <p>Un espace complet de restauration rapide haut de gamme, idéal pour les grands espaces de pause.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Simulateur de gain de temps (placé juste sous l'utilisation intuitive) -->
+        <div class="card">
+            <h2>⏱️ Simulateur de gain de temps</h2>
+            <p>Calculez le temps économisé par vos équipes chaque année grâce à une solution de restauration sur site :</p>
+            <div class="simulator-box">
+                <label for="salaries">Nombre de collaborateurs : <span id="salaries-val" style="color: #1845AD; font-size: 1.3rem;">25</span></label>
+                <input type="range" id="salaries" min="5" max="200" value="25" oninput="updateSim()">
+                <div class="simulator-result" id="result-text">
+                     Gain estimé : ~375 heures économisées par an pour votre entreprise !
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Grand bandeau CPAM -->
+        <div class="banner-container">
+            <img src="cpam.png" alt="Partenariat Santé et Bien-être au Travail - CPAM La Barket">
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© La Barket Entreprises - 49 Boulevard Amiral de Kerguélen, Quimper</p>
+    </footer>
+
+    <script>
+        function updateSim() {
+            const count = document.getElementById('salaries').value;
+            document.getElementById('salaries-val').innerText = count;
+            const totalHours = count * 15;
+            document.getElementById('result-text').innerText = " Gain estimé : ~" + totalHours + " heures économisées par an pour votre entreprise !";
+        }
+    </script>
+</body>
+</html>
