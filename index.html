@@ -1,1 +1,117 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Barket — Espace Entreprises (B2B)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="canonical" href="https://la-barket.github.io/LA-BARKET/index.html">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="logo1.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <style>
+        :root {
+            --primary: #052408;
+            --primary-light: #0D4712;
+            --accent: #E65100;
+            --secondary: #1E293B;
+            --bg-color: #EDF3ED;
+            --card-bg: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #475569;
+            --radius-xl: 20px;
+            --radius-lg: 16px;
+            --shadow-subtle: 0 10px 25px -5px rgba(5, 36, 8, 0.12);
+            --shadow-hover: 0 18px 35px -8px rgba(5, 36, 8, 0.22);
+        }
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            line-height: 1.6;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .top-bar { background: var(--secondary); padding: 12px 24px; display: flex; justify-content: flex-end; align-items: center; }
+        .nav-link { color: white; text-decoration: none; font-weight: 600; font-size: 0.9rem; background: rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 50px; transition: all 0.3s ease; }
+        .nav-link:hover { background: var(--primary-light); }
+        header { background: linear-gradient(135deg, #052408 0%, #0D4712 100%); color: white; text-align: center; padding: 3.5rem 1.5rem 4.5rem 1.5rem; position: relative; overflow: hidden; }
+        header::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 35px; background: var(--bg-color); border-radius: 35px 35px 0 0; }
+        .header-logo { width: 240px; height: 140px; object-fit: contain; margin: 0 auto 18px auto; display: block; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4)); background: rgba(255, 255, 255, 0.15); padding: 12px 20px; border-radius: 40px; border: 3px solid rgba(255, 255, 255, 0.4); }
+        header h1 { margin: 0; font-size: 2.8rem; font-weight: 800; }
+        header p { margin-top: 0.8rem; font-size: 1.2rem; color: #C8E6C9; }
+        main { max-width: 1000px; margin: -25px auto 0 auto; padding: 0 16px; position: relative; z-index: 2; }
+        .card { background: var(--card-bg); border-radius: var(--radius-xl); box-shadow: var(--shadow-subtle); padding: 30px; margin-bottom: 30px; border: 1px solid #81C784; }
+        .card h2 { color: var(--primary); margin-top: 0; font-size: 1.8rem; }
+        .card p { color: var(--text-muted); font-size: 1.05rem; }
+        .contact-box { background: #F0F7F0; padding: 24px; border-radius: var(--radius-lg); border-left: 5px solid var(--primary); margin-top: 20px; }
+        .contact-box p { margin: 6px 0; color: var(--secondary); font-weight: 600; }
+        .ajonc-footer-section { text-align: center; margin: 50px 0 30px 0; padding: 20px; }
+        .footer-images-row { display: flex; justify-content: center; align-items: center; gap: 25px; margin-bottom: 12px; flex-wrap: wrap; }
+        .footer-images-row img { height: 100px; width: auto; object-fit: contain; display: block; }
+        .ajonc-footer-section p { font-size: 1.25rem; font-weight: 800; color: var(--primary); margin: 0; letter-spacing: 0.5px; }
+        footer { text-align: center; padding: 30px; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid #A5D6A7; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <a href="la-barket.html" class="nav-link">👈 Retour au site principal</a>
+    </div>
+
+    <header>
+        <img src="logo1.png" alt="Logo La Barket" class="header-logo">
+        <h1>La Barket — Espace Entreprises</h1>
+        <p>🏢 Solutions de restauration connectée et qualitative pour vos collaborateurs à Quimper</p>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>Offrez une vraie pause déjeuner de chef à vos salariés</h2>
+            <p>Vous êtes une entreprise, un hôpital, ou une collectivité à Quimper et vous cherchez une alternative gourmande, locale et sans contrainte aux tickets restaurant ou aux cantines traditionnelles ?</p>
+            <p>La Barket installe des <strong>frigos connectés en libre-service</strong> directement dans vos locaux, alimentés chaque matin avec des plats 100 % faits maison par notre chef à partir de produits frais du terroir cornouaillais.</p>
+            
+            <div class="contact-box">
+                <p>📞 Contactez notre équipe B2B :</p>
+                <p>📧 Email : entreprises@la-barket.fr</p>
+                <p>📍 Adresse : 49 Boulevard Amiral de Kerguelen, Quimper</p>
+            </div>
+        </div>
+
+        <div class="ajonc-footer-section">
+            <div class="footer-images-row">
+                <img src="ajonc.png" alt="Ajonc La Barket">
+                <img src="soleil.png" alt="Soleil La Barket">
+                <img src="moulin.png" alt="Moulin La Barket">
+                <img src="clara.png" alt="Clara La Barket">
+            </div>
+            <p>Bretons , Gourmands , et Connectés</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 La Barket Quimper — 49 Boulevard Amiral de Kerguelen. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // --- PROTECTION ANTI-COPIE ---
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+        document.addEventListener('dragstart', function(e) { if (e.target.nodeName === 'IMG') { e.preventDefault(); } });
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>
